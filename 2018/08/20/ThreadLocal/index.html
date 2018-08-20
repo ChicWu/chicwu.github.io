@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>117blog</title>
+  <title>ThreadLocal的使用 | 117blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="黑龙江科技大学">
-<meta property="og:type" content="website">
-<meta property="og:title" content="117blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="###ThreadLocal(线程局部变量) ####1 . ThreadLocal API　　ThreadLocal类只有三个方法：  void set(T value)：保存值；T get()：获取值；void remove()：移除值。  ####2 . ThreadLocal的内部是Map　　ThreadLocal内部其实是个Map来保存数据。虽然在使用ThreadLocal时只给出了值，">
+<meta name="keywords" content="Java基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ThreadLocal的使用">
+<meta property="og:url" content="http://yoursite.com/2018/08/20/ThreadLocal/index.html">
 <meta property="og:site_name" content="117blog">
-<meta property="og:description" content="黑龙江科技大学">
+<meta property="og:description" content="###ThreadLocal(线程局部变量) ####1 . ThreadLocal API　　ThreadLocal类只有三个方法：  void set(T value)：保存值；T get()：获取值；void remove()：移除值。  ####2 . ThreadLocal的内部是Map　　ThreadLocal内部其实是个Map来保存数据。虽然在使用ThreadLocal时只给出了值，">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-20T10:18:38.517Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="117blog">
-<meta name="twitter:description" content="黑龙江科技大学">
+<meta name="twitter:title" content="ThreadLocal的使用">
+<meta name="twitter:description" content="###ThreadLocal(线程局部变量) ####1 . ThreadLocal API　　ThreadLocal类只有三个方法：  void set(T value)：保存值；T get()：获取值；void remove()：移除值。  ####2 . ThreadLocal的内部是Map　　ThreadLocal内部其实是个Map来保存数据。虽然在使用ThreadLocal时只给出了值，">
   
   
     <link rel="icon" href="/favicon.png">
@@ -150,9 +152,7 @@
   
 </aside>
         
-        <section id="main">
-  
-    <article id="post-ThreadLocal" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-ThreadLocal" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/20/ThreadLocal/" class="article-date">
   <time datetime="2018-08-20T09:19:43.000Z" itemprop="datePublished">2018-08-20</time>
@@ -165,8 +165,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/20/ThreadLocal/">ThreadLocal的使用</a>
+    <h1 class="article-title" itemprop="name">
+      ThreadLocal的使用
     </h1>
   
 
@@ -221,229 +221,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-自定义注解" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/20/自定义注解/" class="article-date">
-  <time datetime="2018-08-20T09:18:57.000Z" itemprop="datePublished">2018-08-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/20/自定义注解/">自定义注解@mytest</a>
-    </h1>
+    <a href="/2018/08/20/自定义注解/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">自定义注解@mytest</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h2><h4 id="步骤分析"><a href="#步骤分析" class="headerlink" title="步骤分析"></a>步骤分析</h4><p>　　<code>a) 创建自定义注解:MyTest.</code><br>　　<code>b) 定义核心运行类.CoreRunner.</code><br>　　<code>c) 在核心运行类中.获得测试类的Class.</code><br>　　<code>d) 获得Class中的所有方法.遍历得到每个方法.</code><br>　　<code>e) 判断方法上有MyTest注解,就执行该方法.</code></p>
-<h4 id="1-编写自定义注解类"><a href="#1-编写自定义注解类" class="headerlink" title="1. 编写自定义注解类"></a>1. 编写自定义注解类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@Retention(value=RetentionPolicy.RUNTIME)//元注解①</span><br><span class="line">public @interface MyTest &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h6 id="元注解-Java中用来修饰其他注释的注释"><a href="#元注解-Java中用来修饰其他注释的注释" class="headerlink" title="元注解:Java中用来修饰其他注释的注释"></a>元注解:Java中用来修饰其他注释的注释</h6><p>　　<code>@Retention(value=RetentionPolicy.RUNTIME)</code><br>　　方法内传入一个枚举分别有三个值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RetentionPolicy.SOURCE:源文件阶段</span><br><span class="line">value=RetentionPolicy.CLASS:字节码阶段</span><br><span class="line">RetentionPolicy.RUNTIME:运行阶段(创建对象阶段)</span><br></pre></td></tr></table></figure></p>
-<p>　　用与设置注解的存在阶段,默认的自定义注解存在与源码阶段 在生成class文件后以及创建对象阶段就不存在了,所以需要将注解存在阶段延长</p>
-<h6 id="补充-类的存在有三种阶段对应的也有三种获取的方式"><a href="#补充-类的存在有三种阶段对应的也有三种获取的方式" class="headerlink" title="补充:类的存在有三种阶段对应的也有三种获取的方式"></a>补充:类的存在有三种阶段对应的也有三种获取的方式</h6><p>　　a) 源代码阶段:以.java结尾的文件的形式存在，通过Class.forName(“类名”)方法获得。<br>　　b) 字节码阶段:将字节码文件编译后以.class结尾的文件存在，通过类名.class方式获取。<br>　　c) 创建对象阶段:JVM将字节码文件加载进内存的方法区内，通过对象.getClass方法获得。</p>
-<h4 id="2-编写自定义注解核心运行类"><a href="#2-编写自定义注解核心运行类" class="headerlink" title="2. 编写自定义注解核心运行类"></a>2. 编写自定义注解核心运行类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">    /**</span><br><span class="line">     * 获得测试类的Class.</span><br><span class="line">     * 获得Class中的所有的方法.</span><br><span class="line">     * 遍历每个方法,查看每个方法上是否有MyTest注解.</span><br><span class="line">     * 有MyTest注解,这个方法就执行</span><br><span class="line">     * boolean  isAnnotationPresent(Class&lt;? extends Annotation&gt; annotationClass)</span><br><span class="line">     * 判断指定类型的注释是否存在于此元素上 是则返回 true，否则返回 false。</span><br><span class="line">     */</span><br><span class="line">public class CoreRunner &#123;</span><br><span class="line">    public static void main(String[] args) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException &#123;</span><br><span class="line">        // 1.获得测试类的Class:</span><br><span class="line">        Class clazz = AnnotationDemo1.class;</span><br><span class="line">        // 2.获得Class中的所有的方法: 规定了测试的方法必须是public.</span><br><span class="line">        Method[] methods = clazz.getMethods();</span><br><span class="line">        // 3.遍历每个方法:</span><br><span class="line">        for(Method method:methods)&#123;</span><br><span class="line">            boolean flag = method.isAnnotationPresent(MyTest.class);</span><br><span class="line">            if(flag)&#123;</span><br><span class="line">                // 说明方法上有MyTest注解:</span><br><span class="line">                method.invoke(clazz.newInstance(), null);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-编写测试类"><a href="#3-编写测试类" class="headerlink" title="3. 编写测试类"></a>3. 编写测试类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class AnnotationDemo1 &#123;</span><br><span class="line">	@MyTest</span><br><span class="line">	public void demo1()&#123;</span><br><span class="line">		System.out.println(&quot;demo1执行了...&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	@MyTest</span><br><span class="line">	public void demo2()&#123;</span><br><span class="line">		System.out.println(&quot;demo2执行了...&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	public void demo3()&#123;</span><br><span class="line">		System.out.println(&quot;demo3执行了...&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/20/自定义注解/" data-id="cjl22ja1p000fggv29w7ig27q" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java基础/">Java基础</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-设计模式（一）" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/20/设计模式（一）/" class="article-date">
-  <time datetime="2018-08-20T07:41:24.000Z" itemprop="datePublished">2018-08-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/20/设计模式（一）/">设计模式（一）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/20/设计模式（一）/" data-id="cjl21kc2o0006ggv2d7yle7ju" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-spring-boot" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/20/spring-boot/" class="article-date">
-  <time datetime="2018-08-20T06:09:25.000Z" itemprop="datePublished">2018-08-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/20/spring-boot/">spring boot</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#spring boot(一)#</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/20/spring-boot/" data-id="cjl21kc270003ggv2w4cb4r9k" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-jsoup" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/18/jsoup/" class="article-date">
-  <time datetime="2018-08-18T09:05:30.792Z" itemprop="datePublished">2018-08-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/18/jsoup/">Jsoup</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h4><p>　　对HTML页面的解析，之前我一般使用HTMLParser，详细见HTMLParser的学习系列 - 学习总结，但是这个项目已经停止更新。现在比较好的解析HTML的控件是Jsoup。本文对Jsoup的用法做个总结 。<br>　　Jsoup的主要功能有三部分组成：<br>　　<code>a) 从字符串，网页，本地文件等方式生成Documentn</code><br>　　<code>b) 在生成Doucment后，根据Dom和css或类似jquery的selector语法获取Element，然后再从Elements中获取节点属性、文本、html</code><br>　　<code>c) 对Element的进行操作，包括HTML的值、节点内容的值和设置节点属性的值
-下方每节对以上三点进行逐一演示。</code></p>
-<h6 id="POM-xml-配置"><a href="#POM-xml-配置" class="headerlink" title="POM.xml 配置"></a>POM.xml 配置</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.jsoup&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jsoup&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.10.2&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="2-生成Document"><a href="#2-生成Document" class="headerlink" title="2.生成Document"></a>2.生成Document</h4><p>　　JSOUP通过不同方式生成Document，主要有以下三种：<br>　　<code>a) 字符串</code><br>　　<code>b) 网页</code><br>　　<code>c) 本地文件</code></p>
-<h6 id="2-1-从字符串生成Document"><a href="#2-1-从字符串生成Document" class="headerlink" title="2.1 从字符串生成Document"></a>2.1 从字符串生成Document</h6><p>　　关键方法： Jsoup.parse(String html)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public void fromString() &#123;</span><br><span class="line">       String html = &quot;&lt;html&gt;&lt;head&gt;&lt;title&gt;First parse&lt;/title&gt;&lt;/head&gt;&quot;</span><br><span class="line">               + &quot;&lt;body&gt;&lt;p&gt;Parsed HTML into a doc.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&quot;;</span><br><span class="line">       Document document = Jsoup.parse(html);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
-<h6 id="2-2-从网页生成Document"><a href="#2-2-从网页生成Document" class="headerlink" title="2.2 从网页生成Document"></a>2.2 从网页生成Document</h6><p>　　关键方法： Jsoup.connect()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public void fromURL() &#123;</span><br><span class="line">    Document document;</span><br><span class="line">    try &#123;</span><br><span class="line">    	//通过URL+访问的方法获取Document</span><br><span class="line">        document = Jsoup.connect(&quot;https://www.baidu.com/&quot;).get();</span><br><span class="line">        // 从document中获取title值</span><br><span class="line">        String title = document.title();</span><br><span class="line">    &#125; catch (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h6 id="2-3-从本地文件生成Document"><a href="#2-3-从本地文件生成Document" class="headerlink" title="2.3 从本地文件生成Document"></a>2.3 从本地文件生成Document</h6><p>　　关键方法： Jsoup.connect(File file,String charset)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public void fromFile()&#123;</span><br><span class="line">        File file = new File(&quot;filePath&quot;);</span><br><span class="line">        try &#123;</span><br><span class="line">            //通过文件+编码集来获取Document</span><br><span class="line">            Document document = Jsoup.parse(file,&quot;utf-8&quot;);</span><br><span class="line">            System.out.println(document.title());</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="3-获取Element及节点属性、文本、html"><a href="#3-获取Element及节点属性、文本、html" class="headerlink" title="3. 获取Element及节点属性、文本、html"></a>3. 获取Element及节点属性、文本、html</h4><p>　　在上一节中已经生成Document，下面就可以对这个document进行操作，操作的主要单位是Element，下面介绍如何选取elment及获取elment的内容。</p>
-<h6 id="3-1-获取Element，获取的方式分为二种"><a href="#3-1-获取Element，获取的方式分为二种" class="headerlink" title="3.1 获取Element，获取的方式分为二种:"></a>3.1 获取Element，获取的方式分为二种:</h6><p>　　<code>a) 通过DOM解析来获取;</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public void extractDataByDOM() throws IOException&#123;</span><br><span class="line">    Document doc = Jsoup.connect(&quot;https://www.baidu.com/&quot;).get();</span><br><span class="line">    Element lg = doc.getElementById(&quot;lg&quot;);</span><br><span class="line">    logger.info(&quot;getElementById lg = &#123;&#125;&quot;, lg);</span><br><span class="line">    Elements links = doc.getElementsByTag(&quot;a&quot;);</span><br><span class="line">    for (Element link : links) &#123;</span><br><span class="line">      String linkHref = link.attr(&quot;href&quot;);</span><br><span class="line">      String linkText = link.text();</span><br><span class="line">      logger.info(&quot;linkHref=&#123;&#125;, linkText=&#123;&#125;&quot;,linkHref, linkText);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>　　<code>b) 通过css或类似jquery的selector语法来获取；</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public void select4J() throws IOException&#123;</span><br><span class="line">    File input = new File(&quot;filePath&quot;);</span><br><span class="line">    Document document = Jsoup.parse(input, &quot;UTF-8&quot;, &quot;http://example.com/&quot;);</span><br><span class="line"></span><br><span class="line">    // 获取所有的a节点</span><br><span class="line">    Elements links = document.select(&quot;a[href]&quot;);</span><br><span class="line">    System.out.println(links);</span><br><span class="line">    // 获取img的src以.png结果结尾</span><br><span class="line">    Elements pngs = document.select(&quot;img[src$=.png]&quot;);</span><br><span class="line">    System.out.println(pngs);</span><br><span class="line">    // 获取class=masthead的div节点</span><br><span class="line">    Element masthead = document.select(&quot;div.masthead&quot;).first();</span><br><span class="line">    System.out.println(masthead);</span><br><span class="line"></span><br><span class="line">    // 获取class=r的h3节点下面的a节点</span><br><span class="line">    Elements resultLinks = document.select(&quot;h3.r &gt; a&quot;);</span><br><span class="line">    System.out.println(resultLinks);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h6 id="3-2-获取节点属性、文本、html"><a href="#3-2-获取节点属性、文本、html" class="headerlink" title="3.2 获取节点属性、文本、html"></a>3.2 获取节点属性、文本、html</h6><h6 id="3-3-Select选择器"><a href="#3-3-Select选择器" class="headerlink" title="3.3 Select选择器"></a>3.3 Select选择器</h6><h4 id="4-设置节点值"><a href="#4-设置节点值" class="headerlink" title="4. 设置节点值"></a>4. 设置节点值</h4><p>　　设置节点值，主要有在以下方式：<br>　　<code>a) 设置节点HTML的值</code><br>　　<code>b) 设置节点内容的值</code><br>　　<code>c) 设置节点属性的值</code></p>
-<h6 id="4-1-设置节点HTML的值"><a href="#4-1-设置节点HTML的值" class="headerlink" title="4.1 设置节点HTML的值"></a>4.1 设置节点HTML的值</h6><p>　　1. Element.html：使用新的HTML替换旧的值<br>　　2. Element.prepend：将新html添加到指定节点内部的最前面<br>　　3. Element.append：将新html添加到指定节点内部的最后面<br>　　4. Element.wrap:将指定节点封装到html最里面</p>
-<h6 id="4-2-设置节点内容的值"><a href="#4-2-设置节点内容的值" class="headerlink" title="4.2 设置节点内容的值"></a>4.2 设置节点内容的值</h6><p>　　1. Element.text: 完全替换内容<br>　　2. Element.prepend:在节点的内容最前面加内容<br>　　3. Element.append：在节点的内容最后面加内容</p>
-<h6 id="4-3-设置节点属性的值"><a href="#4-3-设置节点属性的值" class="headerlink" title="4.3 设置节点属性的值"></a>4.3 设置节点属性的值</h6><p>　　1. element.attr: 设置属性<br>　　2. element.addClass: 设置class</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/18/jsoup/" data-id="cjl21kc1v0001ggv2ocm0y2qy" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsoup/">jsoup</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/21/hello-world/" class="article-date">
-  <time datetime="2018-04-21T05:54:00.000Z" itemprop="datePublished">2018-04-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/21/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/21/hello-world/" data-id="cjl21kc2k0005ggv2stcf0cei" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
       </div>
