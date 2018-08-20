@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Jsoup入门(一) | 117blog</title>
+  <title>Jsoup | 117blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="####1. 概述　　对HTML页面的解析，之前我一般使用HTMLParser，详细见HTMLParser的学习系列 - 学习总结，但是这个项目已经停止更新。现在比较好的解析HTML的控件是Jsoup。本文对Jsoup的用法做个总结 。　　Jsoup的主要功能有三部分组成：　　1. 从字符串，网页，本地文件等方式生成Documentn　　2. 在生成Doucment后，根据Dom和css或类似jq">
+  <meta name="description" content="1. 概述　　对HTML页面的解析，之前我一般使用HTMLParser，详细见HTMLParser的学习系列 - 学习总结，但是这个项目已经停止更新。现在比较好的解析HTML的控件是Jsoup。本文对Jsoup的用法做个总结 。　　Jsoup的主要功能有三部分组成：　　a) 从字符串，网页，本地文件等方式生成Documentn　　b) 在生成Doucment后，根据Dom和css或类似jquery">
 <meta name="keywords" content="jsoup">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Jsoup入门(一)">
+<meta property="og:title" content="Jsoup">
 <meta property="og:url" content="http://yoursite.com/2018/08/18/jsoup/index.html">
 <meta property="og:site_name" content="117blog">
-<meta property="og:description" content="####1. 概述　　对HTML页面的解析，之前我一般使用HTMLParser，详细见HTMLParser的学习系列 - 学习总结，但是这个项目已经停止更新。现在比较好的解析HTML的控件是Jsoup。本文对Jsoup的用法做个总结 。　　Jsoup的主要功能有三部分组成：　　1. 从字符串，网页，本地文件等方式生成Documentn　　2. 在生成Doucment后，根据Dom和css或类似jq">
+<meta property="og:description" content="1. 概述　　对HTML页面的解析，之前我一般使用HTMLParser，详细见HTMLParser的学习系列 - 学习总结，但是这个项目已经停止更新。现在比较好的解析HTML的控件是Jsoup。本文对Jsoup的用法做个总结 。　　Jsoup的主要功能有三部分组成：　　a) 从字符串，网页，本地文件等方式生成Documentn　　b) 在生成Doucment后，根据Dom和css或类似jquery">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-20T07:27:00.097Z">
+<meta property="og:updated_time" content="2018-08-20T08:38:11.347Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jsoup入门(一)">
-<meta name="twitter:description" content="####1. 概述　　对HTML页面的解析，之前我一般使用HTMLParser，详细见HTMLParser的学习系列 - 学习总结，但是这个项目已经停止更新。现在比较好的解析HTML的控件是Jsoup。本文对Jsoup的用法做个总结 。　　Jsoup的主要功能有三部分组成：　　1. 从字符串，网页，本地文件等方式生成Documentn　　2. 在生成Doucment后，根据Dom和css或类似jq">
+<meta name="twitter:title" content="Jsoup">
+<meta name="twitter:description" content="1. 概述　　对HTML页面的解析，之前我一般使用HTMLParser，详细见HTMLParser的学习系列 - 学习总结，但是这个项目已经停止更新。现在比较好的解析HTML的控件是Jsoup。本文对Jsoup的用法做个总结 。　　Jsoup的主要功能有三部分组成：　　a) 从字符串，网页，本地文件等方式生成Documentn　　b) 在生成Doucment后，根据Dom和css或类似jquery">
   
   
     <link rel="icon" href="/favicon.png">
@@ -81,7 +81,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -93,11 +93,15 @@
       <ul>
         
           <li>
+            <a href="/2018/08/20/设计模式（一）/">设计模式（一）</a>
+          </li>
+        
+          <li>
             <a href="/2018/08/20/spring-boot/">spring boot</a>
           </li>
         
           <li>
-            <a href="/2018/08/18/jsoup/">Jsoup入门(一)</a>
+            <a href="/2018/08/18/jsoup/">Jsoup</a>
           </li>
         
           <li>
@@ -113,7 +117,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/init/">init</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsoup/">jsoup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsoup/">jsoup</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -122,7 +126,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/init/" style="font-size: 10px;">init</a> <a href="/tags/jsoup/" style="font-size: 10px;">jsoup</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a>
+      <a href="/tags/jsoup/" style="font-size: 10px;">jsoup</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a>
     </div>
   </div>
 
@@ -158,7 +162,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Jsoup入门(一)
+      Jsoup
     </h1>
   
 
@@ -166,19 +170,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>####1. 概述<br>　　对HTML页面的解析，之前我一般使用HTMLParser，详细见HTMLParser的学习系列 - 学习总结，但是这个项目已经停止更新。现在比较好的解析HTML的控件是Jsoup。本文对Jsoup的用法做个总结 。<br>　　Jsoup的主要功能有三部分组成：<br>　　<code>1. 从字符串，网页，本地文件等方式生成Documentn</code><br>　　<code>2. 在生成Doucment后，根据Dom和css或类似jquery的selector语法获取Element，然后再从Elements中获取节点属性、文本、html</code><br>　　<code>3. 对Element的进行操作，包括HTML的值、节点内容的值和设置节点属性的值
+        <h4 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h4><p>　　对HTML页面的解析，之前我一般使用HTMLParser，详细见HTMLParser的学习系列 - 学习总结，但是这个项目已经停止更新。现在比较好的解析HTML的控件是Jsoup。本文对Jsoup的用法做个总结 。<br>　　Jsoup的主要功能有三部分组成：<br>　　<code>a) 从字符串，网页，本地文件等方式生成Documentn</code><br>　　<code>b) 在生成Doucment后，根据Dom和css或类似jquery的selector语法获取Element，然后再从Elements中获取节点属性、文本、html</code><br>　　<code>c) 对Element的进行操作，包括HTML的值、节点内容的值和设置节点属性的值
 下方每节对以上三点进行逐一演示。</code></p>
 <h6 id="POM-xml-配置"><a href="#POM-xml-配置" class="headerlink" title="POM.xml 配置"></a>POM.xml 配置</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.jsoup&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jsoup&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.10.2&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-<p>####2.生成Document<br>　　JSOUP通过不同方式生成Document，主要有以下三种：<br>　　<code>1. 字符串</code><br>　　<code>2. 网页</code><br>　　<code>3. 本地文件</code>　　<br>　　2.1 从字符串生成Document<br>　　　　关键方法： Jsoup.parse(String html)<br>　　2.2 从网页生成Document<br>　　　　关键方法： Jsoup.connect()<br>　　2.3 从本地文件生成Document<br>　　　　关键方法： Jsoup.connect(File file,String charset)</p>
-<p>####3. 获取Element及节点属性、文本、html<br>在上一节中已经生成Document，下面就可以对这个document进行操作，操作的主要单位是Element，下面介绍如何选取elment及获取elment的内容。<br>本地包含的主要内容获取节点信息：<br>　　1. 获取Element，获取的方式有二种:<br>　　　　 a) DOM;<br>　　　　 b) 通过css或类似jquery的selector语法；</p>
-<p>####4. 设置节点值<br>　　设置节点值，主要有在以下方式：<br>　　<code>1. 设置节点HTML的值</code><br>　　<code>2. 设置节点内容的值</code><br>　　<code>3. 设置节点属性的值</code><br>4.1 设置节点HTML的值<br>　　Element.html：使用新的HTML替换旧的值<br>　　Element.prepend：将新html添加到指定节点内部的最前面<br>　　Element.append：将新html添加到指定节点内部的最后面<br>　　Element.wrap:将指定节点封装到html最里面</p>
-<p>4.2 设置节点内容的值<br>　　1. Element.text: 完全替换内容<br>　　2. Element.prepend:在节点的内容最前面加内容<br>　　3. Element.append：在节点的内容最后面加内容</p>
-<p>4.3 设置节点属性的值<br>　　element.attr: 设置属性<br>　　element.addClass: 设置class</p>
+<h4 id="2-生成Document"><a href="#2-生成Document" class="headerlink" title="2.生成Document"></a>2.生成Document</h4><p>　　JSOUP通过不同方式生成Document，主要有以下三种：<br>　　<code>a) 字符串</code><br>　　<code>b) 网页</code><br>　　<code>c) 本地文件</code></p>
+<h6 id="2-1-从字符串生成Document"><a href="#2-1-从字符串生成Document" class="headerlink" title="2.1 从字符串生成Document"></a>2.1 从字符串生成Document</h6><p>　　关键方法： Jsoup.parse(String html)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public void fromString() &#123;</span><br><span class="line">       String html = &quot;&lt;html&gt;&lt;head&gt;&lt;title&gt;First parse&lt;/title&gt;&lt;/head&gt;&quot;</span><br><span class="line">               + &quot;&lt;body&gt;&lt;p&gt;Parsed HTML into a doc.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&quot;;</span><br><span class="line">       Document document = Jsoup.parse(html);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<h6 id="2-2-从网页生成Document"><a href="#2-2-从网页生成Document" class="headerlink" title="2.2 从网页生成Document"></a>2.2 从网页生成Document</h6><p>　　关键方法： Jsoup.connect()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public void fromURL() &#123;</span><br><span class="line">    Document document;</span><br><span class="line">    try &#123;</span><br><span class="line">    	//通过URL+访问的方法获取Document</span><br><span class="line">        document = Jsoup.connect(&quot;https://www.baidu.com/&quot;).get();</span><br><span class="line">        // 从document中获取title值</span><br><span class="line">        String title = document.title();</span><br><span class="line">    &#125; catch (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h6 id="2-3-从本地文件生成Document"><a href="#2-3-从本地文件生成Document" class="headerlink" title="2.3 从本地文件生成Document"></a>2.3 从本地文件生成Document</h6><p>　　关键方法： Jsoup.connect(File file,String charset)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public void fromFile()&#123;</span><br><span class="line">        File file = new File(&quot;filePath&quot;);</span><br><span class="line">        try &#123;</span><br><span class="line">            //通过文件+编码集来获取Document</span><br><span class="line">            Document document = Jsoup.parse(file,&quot;utf-8&quot;);</span><br><span class="line">            System.out.println(document.title());</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-获取Element及节点属性、文本、html"><a href="#3-获取Element及节点属性、文本、html" class="headerlink" title="3. 获取Element及节点属性、文本、html"></a>3. 获取Element及节点属性、文本、html</h4><p>　　在上一节中已经生成Document，下面就可以对这个document进行操作，操作的主要单位是Element，下面介绍如何选取elment及获取elment的内容。<br>　　获取Element，获取的方式有二种:<br>　　<code>a) DOM;</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public void extractDataByDOM() throws IOException&#123;</span><br><span class="line">    Document doc = Jsoup.connect(&quot;https://www.baidu.com/&quot;).get();</span><br><span class="line">    Element lg = doc.getElementById(&quot;lg&quot;);</span><br><span class="line">    logger.info(&quot;getElementById lg = &#123;&#125;&quot;, lg);</span><br><span class="line">    Elements links = doc.getElementsByTag(&quot;a&quot;);</span><br><span class="line">    for (Element link : links) &#123;</span><br><span class="line">      String linkHref = link.attr(&quot;href&quot;);</span><br><span class="line">      String linkText = link.text();</span><br><span class="line">      logger.info(&quot;linkHref=&#123;&#125;, linkText=&#123;&#125;&quot;,linkHref, linkText);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>　　<code>b) 通过css或类似jquery的selector语法；</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public void select4J() throws IOException&#123;</span><br><span class="line">    File input = new File(&quot;filePath&quot;);</span><br><span class="line">    Document document = Jsoup.parse(input, &quot;UTF-8&quot;, &quot;http://example.com/&quot;);</span><br><span class="line"></span><br><span class="line">    // 获取所有的a节点</span><br><span class="line">    Elements links = document.select(&quot;a[href]&quot;);</span><br><span class="line">    System.out.println(links);</span><br><span class="line">    // 获取img的src以.png结果结尾</span><br><span class="line">    Elements pngs = document.select(&quot;img[src$=.png]&quot;);</span><br><span class="line">    System.out.println(pngs);</span><br><span class="line">    // 获取class=masthead的div节点</span><br><span class="line">    Element masthead = document.select(&quot;div.masthead&quot;).first();</span><br><span class="line">    System.out.println(masthead);</span><br><span class="line"></span><br><span class="line">    // 获取class=r的h3节点下面的a节点</span><br><span class="line">    Elements resultLinks = document.select(&quot;h3.r &gt; a&quot;);</span><br><span class="line">    System.out.println(resultLinks);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>　　获取节点属性、文本、html</p>
+<h6 id="3-1-获取Element"><a href="#3-1-获取Element" class="headerlink" title="3.1 获取Element"></a>3.1 获取Element</h6><h6 id="3-2-获取节点属性、文本、html"><a href="#3-2-获取节点属性、文本、html" class="headerlink" title="3.2 获取节点属性、文本、html"></a>3.2 获取节点属性、文本、html</h6><h6 id="3-3-Select选择器"><a href="#3-3-Select选择器" class="headerlink" title="3.3 Select选择器"></a>3.3 Select选择器</h6><h4 id="4-设置节点值"><a href="#4-设置节点值" class="headerlink" title="4. 设置节点值"></a>4. 设置节点值</h4><p>　　设置节点值，主要有在以下方式：<br>　　<code>a) 设置节点HTML的值</code><br>　　<code>b) 设置节点内容的值</code><br>　　<code>c) 设置节点属性的值</code></p>
+<h6 id="4-1-设置节点HTML的值"><a href="#4-1-设置节点HTML的值" class="headerlink" title="4.1 设置节点HTML的值"></a>4.1 设置节点HTML的值</h6><p>　　1. Element.html：使用新的HTML替换旧的值<br>　　2. Element.prepend：将新html添加到指定节点内部的最前面<br>　　3. Element.append：将新html添加到指定节点内部的最后面<br>　　4. Element.wrap:将指定节点封装到html最里面</p>
+<h6 id="4-2-设置节点内容的值"><a href="#4-2-设置节点内容的值" class="headerlink" title="4.2 设置节点内容的值"></a>4.2 设置节点内容的值</h6><p>　　1. Element.text: 完全替换内容<br>　　2. Element.prepend:在节点的内容最前面加内容<br>　　3. Element.append：在节点的内容最后面加内容</p>
+<h6 id="4-3-设置节点属性的值"><a href="#4-3-设置节点属性的值" class="headerlink" title="4.3 设置节点属性的值"></a>4.3 设置节点属性的值</h6><p>　　1. element.attr: 设置属性<br>　　2. element.addClass: 设置class</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/18/jsoup/" data-id="cjl1xdafo0002hwv2a0a3ygwe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/18/jsoup/" data-id="cjl2149fx0001pkv25uxnh8el" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsoup/">jsoup</a></li></ul>
