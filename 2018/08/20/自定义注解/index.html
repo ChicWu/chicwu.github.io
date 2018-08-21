@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>自定义注解@mytest | 117blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="自定义注解步骤分析　　a) 创建自定义注解:MyTest.　　b) 定义核心运行类.CoreRunner.　　c) 在核心运行类中.获得测试类的Class.　　d) 获得Class中的所有方法.遍历得到每个方法.　　e) 判断方法上有MyTest注解,就执行该方法. 1. 编写自定义注解类123@Retention(value=RetentionPolicy.RUNTIME)//元注解①publi">
+  <meta name="description" content="这家伙很懒竟然没写摘要">
 <meta name="keywords" content="Java基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自定义注解@mytest">
 <meta property="og:url" content="http://yoursite.com/2018/08/20/自定义注解/index.html">
 <meta property="og:site_name" content="117blog">
-<meta property="og:description" content="自定义注解步骤分析　　a) 创建自定义注解:MyTest.　　b) 定义核心运行类.CoreRunner.　　c) 在核心运行类中.获得测试类的Class.　　d) 获得Class中的所有方法.遍历得到每个方法.　　e) 判断方法上有MyTest注解,就执行该方法. 1. 编写自定义注解类123@Retention(value=RetentionPolicy.RUNTIME)//元注解①publi">
+<meta property="og:description" content="这家伙很懒竟然没写摘要">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-20T10:39:11.628Z">
+<meta property="og:updated_time" content="2018-08-21T05:28:45.454Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自定义注解@mytest">
-<meta name="twitter:description" content="自定义注解步骤分析　　a) 创建自定义注解:MyTest.　　b) 定义核心运行类.CoreRunner.　　c) 在核心运行类中.获得测试类的Class.　　d) 获得Class中的所有方法.遍历得到每个方法.　　e) 判断方法上有MyTest注解,就执行该方法. 1. 编写自定义注解类123@Retention(value=RetentionPolicy.RUNTIME)//元注解①publi">
+<meta name="twitter:description" content="这家伙很懒竟然没写摘要">
   
     <link rel="alternative" href="/atom.xml" title="117blog" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -44,17 +44,17 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: linear-gradient(200deg,#a0cfe4,#e8c37e)"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/img/touxiang.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">ChicWu</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">这瓜包熟吗</p>
+		<p class="header-subtitle">这瓜保熟吗</p>
 		
 
 		<nav class="header-menu">
@@ -62,7 +62,13 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/">技术</a></li>
+	        
+				<li><a href="/">相册</a></li>
+	        
+				<li><a href="/">影评</a></li>
+	        
+				<li><a href="/">往事</a></li>
 	        
 			</ul>
 		</nav>
@@ -88,9 +94,9 @@
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+		        
+					<a class="qq" target="_blank" href="#" title="qq"><i class="icon-qq"></i></a>
 		        
 			</div>
 		</nav>
@@ -101,22 +107,28 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: linear-gradient(200deg,#a0cfe4,#e8c37e)"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/img/touxiang.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">ChicWu</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>这瓜包熟吗<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>这瓜保熟吗<i class="icon icon-quo-right"></i></p>
 			
 			
+			
+				
+			
+				
+			
+				
 			
 				
 			
@@ -131,20 +143,26 @@
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+			        
+						<a class="qq" target="_blank" href="#" title="qq"><i class="icon-qq"></i></a>
 			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 20%"><a href="/">技术</a></li>
+		        
+					<li style="width: 20%"><a href="/">相册</a></li>
+		        
+					<li style="width: 20%"><a href="/">影评</a></li>
+		        
+					<li style="width: 20%"><a href="/">往事</a></li>
 		        
 				</ul>
 			</nav>
@@ -179,7 +197,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h2><h4 id="步骤分析"><a href="#步骤分析" class="headerlink" title="步骤分析"></a>步骤分析</h4><p>　　<code>a) 创建自定义注解:MyTest.</code><br>　　<code>b) 定义核心运行类.CoreRunner.</code><br>　　<code>c) 在核心运行类中.获得测试类的Class.</code><br>　　<code>d) 获得Class中的所有方法.遍历得到每个方法.</code><br>　　<code>e) 判断方法上有MyTest注解,就执行该方法.</code></p>
+        <p>　　这家伙很懒竟然没写摘要<br><a id="more"></a></p>
+<h2 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h2><h4 id="步骤分析"><a href="#步骤分析" class="headerlink" title="步骤分析"></a>步骤分析</h4><p>　　<code>a) 创建自定义注解:MyTest.</code><br>　　<code>b) 定义核心运行类.CoreRunner.</code><br>　　<code>c) 在核心运行类中.获得测试类的Class.</code><br>　　<code>d) 获得Class中的所有方法.遍历得到每个方法.</code><br>　　<code>e) 判断方法上有MyTest注解,就执行该方法.</code></p>
 <h4 id="1-编写自定义注解类"><a href="#1-编写自定义注解类" class="headerlink" title="1. 编写自定义注解类"></a>1. 编写自定义注解类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@Retention(value=RetentionPolicy.RUNTIME)//元注解①</span><br><span class="line">public @interface MyTest &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h6 id="元注解-Java中用来修饰其他注释的注释"><a href="#元注解-Java中用来修饰其他注释的注释" class="headerlink" title="元注解:Java中用来修饰其他注释的注释"></a>元注解:Java中用来修饰其他注释的注释</h6><p>　　<code>@Retention(value=RetentionPolicy.RUNTIME)</code><br>　　方法内传入一个枚举分别有三个值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RetentionPolicy.SOURCE:源文件阶段</span><br><span class="line">value=RetentionPolicy.CLASS:字节码阶段</span><br><span class="line">RetentionPolicy.RUNTIME:运行阶段(创建对象阶段)</span><br></pre></td></tr></table></figure></p>
 <p>　　用与设置注解的存在阶段,默认的自定义注解存在与源码阶段 在生成class文件后以及创建对象阶段就不存在了,所以需要将注解存在阶段延长</p>
@@ -321,6 +340,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义注解"><span class="toc-number">1.</span> <span class="toc-text">自定义注解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#步骤分析"><span class="toc-number">1.0.1.</span> <span class="toc-text">步骤分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-编写自定义注解类"><span class="toc-number">1.0.2.</span> <span class="toc-text">1. 编写自定义注解类</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#元注解-Java中用来修饰其他注释的注释"><span class="toc-number">1.0.2.0.1.</span> <span class="toc-text">元注解:Java中用来修饰其他注释的注释</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#补充-类的存在有三种阶段对应的也有三种获取的方式"><span class="toc-number">1.0.2.0.2.</span> <span class="toc-text">补充:类的存在有三种阶段对应的也有三种获取的方式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-编写自定义注解核心运行类"><span class="toc-number">1.0.3.</span> <span class="toc-text">2. 编写自定义注解核心运行类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-编写测试类"><span class="toc-number">1.0.4.</span> <span class="toc-text">3. 编写测试类</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -351,8 +383,9 @@
       	</div>
     </div>
   </div>
-</footer>
 <script type="text/javascript" src="/love.js"></script>
+</footer>
+
 
     </div>
     <script>
@@ -493,27 +526,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="http://www.baidu.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>baidu</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+              <a href="http://www.google.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>google</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="/archives" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>time</a>
             </li>
           
         </ul>
@@ -524,7 +545,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">这家伙很懒&lt;br&gt;懒得夸自己</div>
   	  	
     	</section>
     

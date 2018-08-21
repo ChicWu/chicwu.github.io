@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Jsoup | 117blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 概述　　对HTML页面的解析，之前我一般使用HTMLParser，详细见HTMLParser的学习系列 - 学习总结，但是这个项目已经停止更新。现在比较好的解析HTML的控件是Jsoup。本文对Jsoup的用法做个总结 。　　Jsoup的主要功能有三部分组成：　　a) 从字符串，网页，本地文件等方式生成Documentn　　b) 在生成Doucment后，根据Dom和css或类似jquery">
+  <meta name="description" content="对HTML页面的解析，之前我一般使用HTMLParser，详细见HTMLParser的学习系列 - 学习总结，但是这个项目已经停止更新。现在比较好的解析HTML的控件是Jsoup。本文对Jsoup的用法做个总结.">
 <meta name="keywords" content="jsoup">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jsoup">
 <meta property="og:url" content="http://yoursite.com/2018/08/18/jsoup/index.html">
 <meta property="og:site_name" content="117blog">
-<meta property="og:description" content="1. 概述　　对HTML页面的解析，之前我一般使用HTMLParser，详细见HTMLParser的学习系列 - 学习总结，但是这个项目已经停止更新。现在比较好的解析HTML的控件是Jsoup。本文对Jsoup的用法做个总结 。　　Jsoup的主要功能有三部分组成：　　a) 从字符串，网页，本地文件等方式生成Documentn　　b) 在生成Doucment后，根据Dom和css或类似jquery">
+<meta property="og:description" content="对HTML页面的解析，之前我一般使用HTMLParser，详细见HTMLParser的学习系列 - 学习总结，但是这个项目已经停止更新。现在比较好的解析HTML的控件是Jsoup。本文对Jsoup的用法做个总结.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-20T08:53:37.825Z">
+<meta property="og:updated_time" content="2018-08-21T05:27:25.781Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jsoup">
-<meta name="twitter:description" content="1. 概述　　对HTML页面的解析，之前我一般使用HTMLParser，详细见HTMLParser的学习系列 - 学习总结，但是这个项目已经停止更新。现在比较好的解析HTML的控件是Jsoup。本文对Jsoup的用法做个总结 。　　Jsoup的主要功能有三部分组成：　　a) 从字符串，网页，本地文件等方式生成Documentn　　b) 在生成Doucment后，根据Dom和css或类似jquery">
+<meta name="twitter:description" content="对HTML页面的解析，之前我一般使用HTMLParser，详细见HTMLParser的学习系列 - 学习总结，但是这个项目已经停止更新。现在比较好的解析HTML的控件是Jsoup。本文对Jsoup的用法做个总结.">
   
     <link rel="alternative" href="/atom.xml" title="117blog" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -44,17 +44,17 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: linear-gradient(200deg,#a0cfe4,#e8c37e)"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/img/touxiang.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">ChicWu</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">这瓜包熟吗</p>
+		<p class="header-subtitle">这瓜保熟吗</p>
 		
 
 		<nav class="header-menu">
@@ -62,7 +62,13 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/">技术</a></li>
+	        
+				<li><a href="/">相册</a></li>
+	        
+				<li><a href="/">影评</a></li>
+	        
+				<li><a href="/">往事</a></li>
 	        
 			</ul>
 		</nav>
@@ -88,9 +94,9 @@
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+		        
+					<a class="qq" target="_blank" href="#" title="qq"><i class="icon-qq"></i></a>
 		        
 			</div>
 		</nav>
@@ -101,22 +107,28 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: linear-gradient(200deg,#a0cfe4,#e8c37e)"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/img/touxiang.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">ChicWu</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>这瓜包熟吗<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>这瓜保熟吗<i class="icon icon-quo-right"></i></p>
 			
 			
+			
+				
+			
+				
+			
+				
 			
 				
 			
@@ -131,20 +143,26 @@
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+			        
+						<a class="qq" target="_blank" href="#" title="qq"><i class="icon-qq"></i></a>
 			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 20%"><a href="/">技术</a></li>
+		        
+					<li style="width: 20%"><a href="/">相册</a></li>
+		        
+					<li style="width: 20%"><a href="/">影评</a></li>
+		        
+					<li style="width: 20%"><a href="/">往事</a></li>
 		        
 				</ul>
 			</nav>
@@ -179,7 +197,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h4><p>　　对HTML页面的解析，之前我一般使用HTMLParser，详细见HTMLParser的学习系列 - 学习总结，但是这个项目已经停止更新。现在比较好的解析HTML的控件是Jsoup。本文对Jsoup的用法做个总结 。<br>　　Jsoup的主要功能有三部分组成：<br>　　<code>a) 从字符串，网页，本地文件等方式生成Documentn</code><br>　　<code>b) 在生成Doucment后，根据Dom和css或类似jquery的selector语法获取Element，然后再从Elements中获取节点属性、文本、html</code><br>　　<code>c) 对Element的进行操作，包括HTML的值、节点内容的值和设置节点属性的值
+        <p>　　对HTML页面的解析，之前我一般使用HTMLParser，详细见HTMLParser的学习系列 - 学习总结，但是这个项目已经停止更新。现在比较好的解析HTML的控件是Jsoup。本文对Jsoup的用法做个总结.<br><a id="more"></a></p>
+<h4 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h4><p>　　Jsoup的主要功能有三部分组成：<br>　　<code>a) 从字符串，网页，本地文件等方式生成Documentn</code><br>　　<code>b) 在生成Doucment后，根据Dom和css或类似jquery的selector语法获取Element，然后再从Elements中获取节点属性、文本、html</code><br>　　<code>c) 对Element的进行操作，包括HTML的值、节点内容的值和设置节点属性的值
 下方每节对以上三点进行逐一演示。</code></p>
 <h6 id="POM-xml-配置"><a href="#POM-xml-配置" class="headerlink" title="POM.xml 配置"></a>POM.xml 配置</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.jsoup&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jsoup&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.10.2&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 <h4 id="2-生成Document"><a href="#2-生成Document" class="headerlink" title="2.生成Document"></a>2.生成Document</h4><p>　　JSOUP通过不同方式生成Document，主要有以下三种：<br>　　<code>a) 字符串</code><br>　　<code>b) 网页</code><br>　　<code>c) 本地文件</code></p>
@@ -328,6 +347,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-概述"><span class="toc-number">1.</span> <span class="toc-text">1. 概述</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#POM-xml-配置"><span class="toc-number">1.0.1.</span> <span class="toc-text">POM.xml 配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-生成Document"><span class="toc-number">2.</span> <span class="toc-text">2.生成Document</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#2-1-从字符串生成Document"><span class="toc-number">2.0.1.</span> <span class="toc-text">2.1 从字符串生成Document</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-2-从网页生成Document"><span class="toc-number">2.0.2.</span> <span class="toc-text">2.2 从网页生成Document</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-3-从本地文件生成Document"><span class="toc-number">2.0.3.</span> <span class="toc-text">2.3 从本地文件生成Document</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-获取Element及节点属性、文本、html"><span class="toc-number">3.</span> <span class="toc-text">3. 获取Element及节点属性、文本、html</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#3-1-获取Element，获取的方式分为二种"><span class="toc-number">3.0.1.</span> <span class="toc-text">3.1 获取Element，获取的方式分为二种:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-2-获取节点属性、文本、html"><span class="toc-number">3.0.2.</span> <span class="toc-text">3.2 获取节点属性、文本、html</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-3-Select选择器"><span class="toc-number">3.0.3.</span> <span class="toc-text">3.3 Select选择器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-设置节点值"><span class="toc-number">4.</span> <span class="toc-text">4. 设置节点值</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#4-1-设置节点HTML的值"><span class="toc-number">4.0.1.</span> <span class="toc-text">4.1 设置节点HTML的值</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-2-设置节点内容的值"><span class="toc-number">4.0.2.</span> <span class="toc-text">4.2 设置节点内容的值</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-3-设置节点属性的值"><span class="toc-number">4.0.3.</span> <span class="toc-text">4.3 设置节点属性的值</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -358,8 +390,9 @@
       	</div>
     </div>
   </div>
-</footer>
 <script type="text/javascript" src="/love.js"></script>
+</footer>
+
 
     </div>
     <script>
@@ -500,27 +533,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="http://www.baidu.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>baidu</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+              <a href="http://www.google.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>google</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="/archives" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>time</a>
             </li>
           
         </ul>
@@ -531,7 +552,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">这家伙很懒&lt;br&gt;懒得夸自己</div>
   	  	
     	</section>
     

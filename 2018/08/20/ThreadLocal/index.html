@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>ThreadLocal的使用 | 117blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、 ThreadLocal(线程局部变量) 1.1 ThreadLocal API　　ThreadLocal类只有三个方法：123void set(T value)：保存值；T get()：获取值；void remove()：移除值; 1.2 ThreadLocal的内部是Map　　ThreadLocal内部其实是个Map来保存数据。虽然在使用ThreadLocal时只给出了值，没有给出键，其实">
+  <meta name="description" content="这家伙很懒竟然没写摘要">
 <meta name="keywords" content="Java基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ThreadLocal的使用">
 <meta property="og:url" content="http://yoursite.com/2018/08/20/ThreadLocal/index.html">
 <meta property="og:site_name" content="117blog">
-<meta property="og:description" content="一、 ThreadLocal(线程局部变量) 1.1 ThreadLocal API　　ThreadLocal类只有三个方法：123void set(T value)：保存值；T get()：获取值；void remove()：移除值; 1.2 ThreadLocal的内部是Map　　ThreadLocal内部其实是个Map来保存数据。虽然在使用ThreadLocal时只给出了值，没有给出键，其实">
+<meta property="og:description" content="这家伙很懒竟然没写摘要">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-20T11:10:57.280Z">
+<meta property="og:updated_time" content="2018-08-21T05:34:11.003Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ThreadLocal的使用">
-<meta name="twitter:description" content="一、 ThreadLocal(线程局部变量) 1.1 ThreadLocal API　　ThreadLocal类只有三个方法：123void set(T value)：保存值；T get()：获取值；void remove()：移除值; 1.2 ThreadLocal的内部是Map　　ThreadLocal内部其实是个Map来保存数据。虽然在使用ThreadLocal时只给出了值，没有给出键，其实">
+<meta name="twitter:description" content="这家伙很懒竟然没写摘要">
   
     <link rel="alternative" href="/atom.xml" title="117blog" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -44,17 +44,17 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: linear-gradient(200deg,#a0cfe4,#e8c37e)"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/img/touxiang.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">ChicWu</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">这瓜包熟吗</p>
+		<p class="header-subtitle">这瓜保熟吗</p>
 		
 
 		<nav class="header-menu">
@@ -62,7 +62,13 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/">技术</a></li>
+	        
+				<li><a href="/">相册</a></li>
+	        
+				<li><a href="/">影评</a></li>
+	        
+				<li><a href="/">往事</a></li>
 	        
 			</ul>
 		</nav>
@@ -88,9 +94,9 @@
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+		        
+					<a class="qq" target="_blank" href="#" title="qq"><i class="icon-qq"></i></a>
 		        
 			</div>
 		</nav>
@@ -101,22 +107,28 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: linear-gradient(200deg,#a0cfe4,#e8c37e)"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/img/touxiang.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">ChicWu</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>这瓜包熟吗<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>这瓜保熟吗<i class="icon icon-quo-right"></i></p>
 			
 			
+			
+				
+			
+				
+			
+				
 			
 				
 			
@@ -131,20 +143,26 @@
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+			        
+						<a class="qq" target="_blank" href="#" title="qq"><i class="icon-qq"></i></a>
 			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 20%"><a href="/">技术</a></li>
+		        
+					<li style="width: 20%"><a href="/">相册</a></li>
+		        
+					<li style="width: 20%"><a href="/">影评</a></li>
+		        
+					<li style="width: 20%"><a href="/">往事</a></li>
 		        
 				</ul>
 			</nav>
@@ -179,7 +197,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、-ThreadLocal-线程局部变量"><a href="#一、-ThreadLocal-线程局部变量" class="headerlink" title="一、 ThreadLocal(线程局部变量)"></a>一、 ThreadLocal(线程局部变量)</h2><p><code></code></p>
+        <p>　　这家伙很懒竟然没写摘要<br><a id="more"></a></p>
+<h2 id="一、-ThreadLocal-线程局部变量"><a href="#一、-ThreadLocal-线程局部变量" class="headerlink" title="一、 ThreadLocal(线程局部变量)"></a>一、 ThreadLocal(线程局部变量)</h2><p><code></code></p>
 <h4 id="1-1-ThreadLocal-API"><a href="#1-1-ThreadLocal-API" class="headerlink" title="1.1 ThreadLocal API"></a>1.1 ThreadLocal API</h4><p>　　ThreadLocal类只有三个方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">void set(T value)：保存值；</span><br><span class="line">T get()：获取值；</span><br><span class="line">void remove()：移除值;</span><br></pre></td></tr></table></figure></p>
 <h4 id="1-2-ThreadLocal的内部是Map"><a href="#1-2-ThreadLocal的内部是Map" class="headerlink" title="1.2 ThreadLocal的内部是Map"></a>1.2 ThreadLocal的内部是Map</h4><p>　　ThreadLocal内部其实是个Map来保存数据。虽然在使用ThreadLocal时只给出了值，没有给出键，其实它内部使用了当前线程做为键。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class MyThreadLocal&lt;T&gt; &#123;</span><br><span class="line">	private Map&lt;Thread,T&gt; map = new HashMap&lt;Thread,T&gt;();</span><br><span class="line">	public void set(T value) &#123;</span><br><span class="line">		map.put(Thread.currentThread(), value);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void remove() &#123;</span><br><span class="line">		map.remove(Thread.currentThread());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public T get() &#123;</span><br><span class="line">		return map.get(Thread.currentThread());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="二、-Service事务"><a href="#二、-Service事务" class="headerlink" title="二、 Service事务"></a>二、 Service事务</h2><h4 id="2-1-DAO中的事务"><a href="#2-1-DAO中的事务" class="headerlink" title="2.1 DAO中的事务"></a>2.1 DAO中的事务</h4><p>　　在DAO中处理事务真是“小菜一碟”。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public void xxx() &#123;</span><br><span class="line">    Connection con = null;</span><br><span class="line">    try &#123;</span><br><span class="line">        con = JdbcUtils.getConnection();</span><br><span class="line">        con.setAutoCommitted(false);</span><br><span class="line">        QueryRunner qr = new QueryRunner();</span><br><span class="line">        String sql = …;</span><br><span class="line">        Object[] params = …;</span><br><span class="line">        qr.update(con, sql, params);</span><br><span class="line">        sql = …;</span><br><span class="line">        Object[] params = …;</span><br><span class="line">        qr.update(con, sql, params);</span><br><span class="line">        con.commit();</span><br><span class="line">    &#125; catch(Exception e) &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            if(con != null) &#123;con.rollback();&#125;</span><br><span class="line">        &#125; catch(Exception e) &#123;&#125;</span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">            con.close();</span><br><span class="line">        	&#125; catch(Exception e) &#123;&#125;</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -324,6 +343,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、-ThreadLocal-线程局部变量"><span class="toc-number">1.</span> <span class="toc-text">一、 ThreadLocal(线程局部变量)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-ThreadLocal-API"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.1 ThreadLocal API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-ThreadLocal的内部是Map"><span class="toc-number">1.0.2.</span> <span class="toc-text">1.2 ThreadLocal的内部是Map</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、-Service事务"><span class="toc-number">2.</span> <span class="toc-text">二、 Service事务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-DAO中的事务"><span class="toc-number">2.0.1.</span> <span class="toc-text">2.1 DAO中的事务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-Service才是处理事务的地方"><span class="toc-number">2.0.2.</span> <span class="toc-text">2.2 Service才是处理事务的地方</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-修改JdbcUtils"><span class="toc-number">2.0.3.</span> <span class="toc-text">2.3 修改JdbcUtils</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#SERVICE"><span class="toc-number">2.0.3.0.1.</span> <span class="toc-text">SERVICE:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#DAO"><span class="toc-number">2.0.3.0.2.</span> <span class="toc-text">DAO:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#beginTransaction"><span class="toc-number">2.0.3.0.3.</span> <span class="toc-text">beginTransaction()</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#getConnection"><span class="toc-number">2.0.3.0.4.</span> <span class="toc-text">getConnection()</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#commitTransaction"><span class="toc-number">2.0.3.0.5.</span> <span class="toc-text">commitTransaction()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-再次修改JdbcUtils"><span class="toc-number">2.0.4.</span> <span class="toc-text">2.4 再次修改JdbcUtils</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-转账示例"><span class="toc-number">2.0.5.</span> <span class="toc-text">2.5 转账示例</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -354,8 +386,9 @@
       	</div>
     </div>
   </div>
-</footer>
 <script type="text/javascript" src="/love.js"></script>
+</footer>
+
 
     </div>
     <script>
@@ -496,27 +529,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="http://www.baidu.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>baidu</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+              <a href="http://www.google.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>google</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="/archives" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>time</a>
             </li>
           
         </ul>
@@ -527,7 +548,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">这家伙很懒&lt;br&gt;懒得夸自己</div>
   	  	
     	</section>
     

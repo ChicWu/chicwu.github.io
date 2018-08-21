@@ -8,23 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>设计模式（一） | 117blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="黑龙江科技大学">
-<meta name="keywords" content="设计模式">
+  <meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式（一）">
 <meta property="og:url" content="http://yoursite.com/2018/08/20/设计模式（一）/index.html">
 <meta property="og:site_name" content="117blog">
-<meta property="og:description" content="黑龙江科技大学">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-20T07:42:02.588Z">
+<meta property="og:updated_time" content="2018-08-21T05:28:26.151Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式（一）">
-<meta name="twitter:description" content="黑龙江科技大学">
   
     <link rel="alternative" href="/atom.xml" title="117blog" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -44,17 +41,17 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: linear-gradient(200deg,#a0cfe4,#e8c37e)"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/img/touxiang.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">ChicWu</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">这瓜包熟吗</p>
+		<p class="header-subtitle">这瓜保熟吗</p>
 		
 
 		<nav class="header-menu">
@@ -62,7 +59,13 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/">技术</a></li>
+	        
+				<li><a href="/">相册</a></li>
+	        
+				<li><a href="/">影评</a></li>
+	        
+				<li><a href="/">往事</a></li>
 	        
 			</ul>
 		</nav>
@@ -88,9 +91,9 @@
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+		        
+					<a class="qq" target="_blank" href="#" title="qq"><i class="icon-qq"></i></a>
 		        
 			</div>
 		</nav>
@@ -101,22 +104,28 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: linear-gradient(200deg,#a0cfe4,#e8c37e)"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/img/touxiang.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">ChicWu</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>这瓜包熟吗<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>这瓜保熟吗<i class="icon icon-quo-right"></i></p>
 			
 			
+			
+				
+			
+				
+			
+				
 			
 				
 			
@@ -131,20 +140,26 @@
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+			        
+						<a class="qq" target="_blank" href="#" title="qq"><i class="icon-qq"></i></a>
 			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 20%"><a href="/">技术</a></li>
+		        
+					<li style="width: 20%"><a href="/">相册</a></li>
+		        
+					<li style="width: 20%"><a href="/">影评</a></li>
+		        
+					<li style="width: 20%"><a href="/">往事</a></li>
 		        
 				</ul>
 			</nav>
@@ -179,7 +194,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <a id="more"></a>
       
 
       
@@ -314,6 +329,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -344,8 +372,9 @@
       	</div>
     </div>
   </div>
-</footer>
 <script type="text/javascript" src="/love.js"></script>
+</footer>
+
 
     </div>
     <script>
@@ -486,27 +515,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="http://www.baidu.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>baidu</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+              <a href="http://www.google.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>google</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="/archives" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>time</a>
             </li>
           
         </ul>
@@ -517,7 +534,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">这家伙很懒&lt;br&gt;懒得夸自己</div>
   	  	
     	</section>
     
