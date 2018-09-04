@@ -134,16 +134,17 @@
 
 
 
-<meta name="description" content="黑龙江科技大学">
-<meta property="og:type" content="website">
-<meta property="og:title" content="117blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+<meta name="description" content="简单的使用Logger进行日志处理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Logger 基本用法">
+<meta property="og:url" content="http://yoursite.com/2018/09/04/使用Logger进行日志处理/index.html">
 <meta property="og:site_name" content="117blog">
-<meta property="og:description" content="黑龙江科技大学">
+<meta property="og:description" content="简单的使用Logger进行日志处理">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-04T12:55:45.561Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="117blog">
-<meta name="twitter:description" content="黑龙江科技大学">
+<meta name="twitter:title" content="Logger 基本用法">
+<meta name="twitter:description" content="简单的使用Logger进行日志处理">
 
 
 
@@ -173,13 +174,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/04/使用Logger进行日志处理/"/>
 
 
 
 
 
-  <title>Archive | 117blog</title>
+  <title>Logger 基本用法 | 117blog</title>
   
 
 
@@ -207,7 +208,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -311,226 +312,229 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/使用Logger进行日志处理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChicWu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="117blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h2 class="post-title" itemprop="name headline">Logger 基本用法</h2>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-04T20:04:54+08:00">
+                2018-09-04
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2018-09-04T20:55:45+08:00">
+                2018-09-04
+              </time>
+            
+          </span>
+
           
-        
-        Um..! 10 posts in total. Keep on posting.
-      </span>
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/09/04/使用Logger进行日志处理/" class="leancloud_visitors" data-flag-title="Logger 基本用法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <p>　　简单的使用Logger进行日志处理<br><a id="more"></a></p>
+<h1 id="一、创建Logger对象"><a href="#一、创建Logger对象" class="headerlink" title="一、创建Logger对象"></a>一、创建Logger对象</h1><p><code>static Logger getLogger(String name)</code><br>　　为指定子系统查找或创建一个 logger。<br><code>static Logger getLogger(String name, String resourceBundleName)</code><br>　　为指定子系统查找或创建一个 logger。<br>注意：name是Logger的名称，当名称相同时候，同一个名称的Logger只创建一个。</p>
+<h1 id="二、Logger的级别"><a href="#二、Logger的级别" class="headerlink" title="二、Logger的级别"></a>二、Logger的级别</h1><p>　　比log4j的级别详细，全部定义在java.util.logging.Level里面。各级别按降序排列如下：</p>
+<blockquote>
+<ul>
+<li>SEVERE（最高值）</li>
+<li>WARNING</li>
+<li>INFO(默认)</li>
+<li>CONFIG</li>
+<li>FINE</li>
+<li>FINER</li>
+<li>FINEST（最低值）</li>
+</ul>
+</blockquote>
+<p>　　此外，还有一个级别 OFF，可用来关闭日志记录，使用级别 ALL 启用所有消息的日志记录。<br>logger默认的级别是INFO，比INFO更低的日志将不显示。</p>
+<h1 id="三、Logger的Handler"><a href="#三、Logger的Handler" class="headerlink" title="三、Logger的Handler"></a>三、Logger的Handler</h1><p>　　创建方法:<br>　　<code>FileHandler fileHandler = new FileHandler(FILE_PATH, true);</code><br>　　<code>FILE_PATH:日志文件的路径，true：是否才用追加的方式写入日志文件</code><br>　　Handler 对象从 Logger 中获取日志信息，并将这些信息导出。例如，它可将这些信息写入控制台或文件中，也可以将这些信息发送到网络日志服务中，或将其转发到操作系统日志中。<br>　　可通过执行 setLevel(Level.OFF) 来禁用 Handler，并可通过执行适当级别的 setLevel 来重新启用。<br>　　Handler 类通常使用 LogManager 属性来设置 Handler 的 Filter、Formatter 和 Level 的默认值</p>
+<h1 id="四、Logger的Formatter"><a href="#四、Logger的Formatter" class="headerlink" title="四、Logger的Formatter"></a>四、Logger的Formatter</h1><p>　　Formatter 为格式化 LogRecords 提供支持。<br>　　一般来说，每个日志记录 Handler 都有关联的 Formatter。Formatter 接受 LogRecord，并将它转换为一个字符串。<br>　　有些 formatter（如 XMLFormatter）需要围绕一组格式化记录来包装头部和尾部字符串。可以使用 getHeader 和 getTail 方法来获得这些字符串。<br>　　LogRecord 对象用于在日志框架和单个日志 Handler 之间传递日志请求。<br>　　<code>LogRecord(Level level, String msg)</code><br>　　Level用给定级别和消息值构造 LogRecord。</p>
+<h1 id="五、简单案例"><a href="#五、简单案例" class="headerlink" title="五、简单案例"></a>五、简单案例</h1><p>　　日志处理类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">public class MyLog &#123;</span><br><span class="line">    private static Logger logger = Logger.getLogger(MyLog.class.getName());</span><br><span class="line"></span><br><span class="line">    private static String FILE_PATH = &quot;E:\\MyLog\\winfo.log&quot;;</span><br><span class="line">    static &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            FileHandler fileHandler = new FileHandler(FILE_PATH, true);</span><br><span class="line">            fileHandler.setEncoding(&quot;utf-8&quot;);</span><br><span class="line">            MyLogFormatter sf = new MyLogFormatter();</span><br><span class="line">            fileHandler.setFormatter(sf);</span><br><span class="line">            logger.addHandler(fileHandler);</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void error(Object obj) &#123;</span><br><span class="line">        //严重</span><br><span class="line">        LogRecord lr = new LogRecord(Level.SEVERE, obj.toString());</span><br><span class="line">        logger.log(lr);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void warn(Object obj) &#123;</span><br><span class="line">        //警告</span><br><span class="line">        LogRecord lr = new LogRecord(Level.WARNING, obj.toString());</span><br><span class="line">        logger.log(lr);</span><br><span class="line">    &#125;</span><br><span class="line">    public static void info(Object obj) &#123;</span><br><span class="line">        //信息</span><br><span class="line">        LogRecord lr = new LogRecord(Level.INFO, obj.toString());</span><br><span class="line">        logger.log(lr);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>　　日志信息处理类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class OTLLogFormatter extends Formatter &#123;</span><br><span class="line">    SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy/MM/dd HH:mm:ss&quot;);</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String format(LogRecord record) &#123;</span><br><span class="line">        return &quot;[&quot; + sdf.format(new Date()) + &quot;] [&quot; + record.getLevel() + &quot;] &quot;</span><br><span class="line">                + record.getMessage().replace(&quot;\r&quot;, &quot; &quot;).replace(&quot;\n&quot;, &quot; &quot;) + &quot;\r\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>　　测试案例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class LogTest &#123;</span><br><span class="line">       @Test</span><br><span class="line">       public void test0()&#123;</span><br><span class="line">           OTLLog.error(&quot;严重信息测试&quot;);</span><br><span class="line">       	OTLLog.warn(&quot;警告信息测试&quot;);</span><br><span class="line">       	OTLLog.info(&quot;信息输出测试&quot;);</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
         
-        
+
         
 
         
           
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2018">2018</h2>
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
           </div>
         
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/04/使用Logger进行日志处理/" itemprop="url">
-              
-                <span itemprop="name">Logger 基本用法</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-04T20:04:54+08:00"
-              content="2018-09-04" >
-          09-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        </div>
+      
       
 
-        
-        
-        
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/30/babel简单使用(一)js代码转换/" rel="next" title="babel简单使用(一)js代码转换">
+                <i class="fa fa-chevron-left"></i> babel简单使用(一)js代码转换
+              </a>
+            
+          </div>
 
-        
-        
+          <span class="post-nav-divider"></span>
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/30/babel简单使用(一)js代码转换/" itemprop="url">
-              
-                <span itemprop="name">babel简单使用(一)js代码转换</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-30T19:17:50+08:00"
-              content="2018-08-30" >
-          08-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/28/JavaScrpt解析ast/" itemprop="url">
-              
-                <span itemprop="name">JavaScrpt解析</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-28T16:09:46+08:00"
-              content="2018-08-28" >
-          08-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/25/坤哥：相识度匹配/" itemprop="url">
-              
-                <span itemprop="name">坤哥：相识度匹配</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-25T15:52:49+08:00"
-              content="2018-08-25" >
-          08-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/20/ThreadLocal/" itemprop="url">
-              
-                <span itemprop="name">ThreadLocal的使用</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-20T17:19:43+08:00"
-              content="2018-08-20" >
-          08-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-    </div>
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2018/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -538,6 +542,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -560,8 +568,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -671,6 +688,22 @@
 		<!--my custom code end-->
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、创建Logger对象"><span class="nav-number">1.</span> <span class="nav-text">一、创建Logger对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、Logger的级别"><span class="nav-number">2.</span> <span class="nav-text">二、Logger的级别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、Logger的Handler"><span class="nav-number">3.</span> <span class="nav-text">三、Logger的Handler</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、Logger的Formatter"><span class="nav-number">4.</span> <span class="nav-text">四、Logger的Formatter</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、简单案例"><span class="nav-number">5.</span> <span class="nav-text">五、简单案例</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -824,6 +857,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
@@ -1014,26 +1051,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
   
 
 
