@@ -123,7 +123,7 @@
 
 
 
-  <meta name="keywords" content="Java基础," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -135,16 +135,15 @@
 
 
 <meta name="description" content="这家伙很懒竟然没写摘要">
-<meta name="keywords" content="Java基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自定义注解@mytest">
-<meta property="og:url" content="http://yoursite.com/2018/08/20/自定义注解/index.html">
+<meta property="og:title" content="RabbitMQ基础;">
+<meta property="og:url" content="http://yoursite.com/2018/09/06/RabbitMQ基础/index.html">
 <meta property="og:site_name" content="117blog">
 <meta property="og:description" content="这家伙很懒竟然没写摘要">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-13T01:26:01.358Z">
+<meta property="og:updated_time" content="2019-01-11T07:49:53.872Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自定义注解@mytest">
+<meta name="twitter:title" content="RabbitMQ基础;">
 <meta name="twitter:description" content="这家伙很懒竟然没写摘要">
 
 
@@ -175,13 +174,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/20/自定义注解/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/06/RabbitMQ基础/"/>
 
 
 
 
 
-  <title>自定义注解@mytest | 117blog</title>
+  <title>RabbitMQ基础; | 117blog</title>
   
 
 
@@ -327,7 +326,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/20/自定义注解/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/06/RabbitMQ基础/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ChicWu">
@@ -344,7 +343,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">自定义注解@mytest</h2>
+          <h2 class="post-title" itemprop="name headline">RabbitMQ基础;</h2>
         
 
         <div class="post-meta">
@@ -356,8 +355,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-20T17:18:57+08:00">
-                2018-08-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-06T16:54:20+08:00">
+                2018-09-06
               </time>
             
 
@@ -372,8 +371,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2018-09-13T09:26:01+08:00">
-                2018-09-13
+              <time title="Post modified" itemprop="dateModified" datetime="2019-01-11T15:49:53+08:00">
+                2019-01-11
               </time>
             
           </span>
@@ -386,7 +385,7 @@
 
           
           
-             <span id="/2018/08/20/自定义注解/" class="leancloud_visitors" data-flag-title="自定义注解@mytest">
+             <span id="/2018/09/06/RabbitMQ基础/" class="leancloud_visitors" data-flag-title="RabbitMQ基础;">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -449,13 +448,6 @@
 
       
         <p>　　这家伙很懒竟然没写摘要<br><a id="more"></a></p>
-<h2 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h2><h4 id="步骤分析"><a href="#步骤分析" class="headerlink" title="步骤分析"></a>步骤分析</h4><p>　　<code>a) 创建自定义注解:MyTest.</code><br>　　<code>b) 定义核心运行类.CoreRunner.</code><br>　　<code>c) 在核心运行类中.获得测试类的Class.</code><br>　　<code>d) 获得Class中的所有方法.遍历得到每个方法.</code><br>　　<code>e) 判断方法上有MyTest注解,就执行该方法.</code></p>
-<h4 id="1-编写自定义注解类"><a href="#1-编写自定义注解类" class="headerlink" title="1. 编写自定义注解类"></a>1. 编写自定义注解类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@Retention(value=RetentionPolicy.RUNTIME)//元注解①</span><br><span class="line">public @interface MyTest &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h6 id="元注解-Java中用来修饰其他注释的注释"><a href="#元注解-Java中用来修饰其他注释的注释" class="headerlink" title="元注解:Java中用来修饰其他注释的注释"></a>元注解:Java中用来修饰其他注释的注释</h6><p>　　<code>@Retention(value=RetentionPolicy.RUNTIME)</code><br>　　方法内传入一个枚举分别有三个值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RetentionPolicy.SOURCE:源文件阶段</span><br><span class="line">value=RetentionPolicy.CLASS:字节码阶段</span><br><span class="line">RetentionPolicy.RUNTIME:运行阶段(创建对象阶段)</span><br></pre></td></tr></table></figure></p>
-<p>　　用与设置注解的存在阶段,默认的自定义注解存在与源码阶段 在生成class文件后以及创建对象阶段就不存在了,所以需要将注解存在阶段延长</p>
-<h6 id="补充-类的存在有三种阶段对应的也有三种获取的方式"><a href="#补充-类的存在有三种阶段对应的也有三种获取的方式" class="headerlink" title="补充:类的存在有三种阶段对应的也有三种获取的方式"></a>补充:类的存在有三种阶段对应的也有三种获取的方式</h6><p>　　a) 源代码阶段:以.java结尾的文件的形式存在，通过Class.forName(“类名”)方法获得。<br>　　b) 字节码阶段:将字节码文件编译后以.class结尾的文件存在，通过类名.class方式获取。<br>　　c) 创建对象阶段:JVM将字节码文件加载进内存的方法区内，通过对象.getClass方法获得。</p>
-<h4 id="2-编写自定义注解核心运行类"><a href="#2-编写自定义注解核心运行类" class="headerlink" title="2. 编写自定义注解核心运行类"></a>2. 编写自定义注解核心运行类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">    /**</span><br><span class="line">     * 获得测试类的Class.</span><br><span class="line">     * 获得Class中的所有的方法.</span><br><span class="line">     * 遍历每个方法,查看每个方法上是否有MyTest注解.</span><br><span class="line">     * 有MyTest注解,这个方法就执行</span><br><span class="line">     * boolean  isAnnotationPresent(Class&lt;? extends Annotation&gt; annotationClass)</span><br><span class="line">     * 判断指定类型的注释是否存在于此元素上 是则返回 true，否则返回 false。</span><br><span class="line">     */</span><br><span class="line">public class CoreRunner &#123;</span><br><span class="line">    public static void main(String[] args) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException &#123;</span><br><span class="line">        // 1.获得测试类的Class:</span><br><span class="line">        Class clazz = AnnotationDemo1.class;</span><br><span class="line">        // 2.获得Class中的所有的方法: 规定了测试的方法必须是public.</span><br><span class="line">        Method[] methods = clazz.getMethods();</span><br><span class="line">        // 3.遍历每个方法:</span><br><span class="line">        for(Method method:methods)&#123;</span><br><span class="line">            boolean flag = method.isAnnotationPresent(MyTest.class);</span><br><span class="line">            if(flag)&#123;</span><br><span class="line">                // 说明方法上有MyTest注解:</span><br><span class="line">                method.invoke(clazz.newInstance(), null);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-编写测试类"><a href="#3-编写测试类" class="headerlink" title="3. 编写测试类"></a>3. 编写测试类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class AnnotationDemo1 &#123;</span><br><span class="line">	@MyTest</span><br><span class="line">	public void demo1()&#123;</span><br><span class="line">		System.out.println(&quot;demo1执行了...&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	@MyTest</span><br><span class="line">	public void demo2()&#123;</span><br><span class="line">		System.out.println(&quot;demo2执行了...&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	public void demo3()&#123;</span><br><span class="line">		System.out.println(&quot;demo3执行了...&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -470,12 +462,6 @@
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Java基础/" rel="tag"># Java基础</a>
-          
-        </div>
       
 
       
@@ -501,8 +487,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/21/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/09/06/Hibernate进阶/" rel="next" title="Hibernate进阶;">
+                <i class="fa fa-chevron-left"></i> Hibernate进阶;
               </a>
             
           </div>
@@ -511,8 +497,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/20/ThreadLocal/" rel="prev" title="ThreadLocal的使用">
-                ThreadLocal的使用 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/06/Docker基础/" rel="prev" title="Docker基础;">
+                Docker基础; <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -567,17 +553,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -687,22 +664,6 @@
 		<!--my custom code end-->
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义注解"><span class="nav-number">1.</span> <span class="nav-text">自定义注解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤分析"><span class="nav-number">1.0.1.</span> <span class="nav-text">步骤分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-编写自定义注解类"><span class="nav-number">1.0.2.</span> <span class="nav-text">1. 编写自定义注解类</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#元注解-Java中用来修饰其他注释的注释"><span class="nav-number">1.0.2.0.1.</span> <span class="nav-text">元注解:Java中用来修饰其他注释的注释</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#补充-类的存在有三种阶段对应的也有三种获取的方式"><span class="nav-number">1.0.2.0.2.</span> <span class="nav-text">补充:类的存在有三种阶段对应的也有三种获取的方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-编写自定义注解核心运行类"><span class="nav-number">1.0.3.</span> <span class="nav-text">2. 编写自定义注解核心运行类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-编写测试类"><span class="nav-number">1.0.4.</span> <span class="nav-text">3. 编写测试类</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
