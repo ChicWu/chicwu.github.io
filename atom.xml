@@ -115,6 +115,26 @@
   </entry>
   
   <entry>
+    <title>随笔记</title>
+    <link href="http://yoursite.com/2018/09/25/%E9%9A%8F%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2018/09/25/随笔记/</id>
+    <published>2018-09-25T01:16:19.000Z</published>
+    <updated>2018-09-25T01:19:18.971Z</updated>
+    
+    <content type="html"><![CDATA[<p>　　这家伙很懒竟然没写摘要<br><a id="more"></a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　这家伙很懒竟然没写摘要&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="随笔记" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>责任链设计模式</title>
     <link href="http://yoursite.com/2018/09/12/%E8%B4%A3%E4%BB%BB%E9%93%BE%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     <id>http://yoursite.com/2018/09/12/责任链设计模式/</id>
@@ -211,6 +231,60 @@
   </entry>
   
   <entry>
+    <title>SpringBoot基础</title>
+    <link href="http://yoursite.com/2018/09/06/SpringBoot%E5%9F%BA%E7%A1%80/"/>
+    <id>http://yoursite.com/2018/09/06/SpringBoot基础/</id>
+    <published>2018-09-06T08:50:21.000Z</published>
+    <updated>2018-09-13T01:43:47.512Z</updated>
+    
+    <content type="html"><![CDATA[<p>　　这家伙很懒竟然没写摘要<br><a id="more"></a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　这家伙很懒竟然没写摘要&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SpringMVC基础;</title>
+    <link href="http://yoursite.com/2018/09/06/SpringMVC%E5%9F%BA%E7%A1%80/"/>
+    <id>http://yoursite.com/2018/09/06/SpringMVC基础/</id>
+    <published>2018-09-06T08:50:03.000Z</published>
+    <updated>2018-09-06T08:50:03.476Z</updated>
+    
+    <content type="html"><![CDATA[<p>　　这家伙很懒竟然没写摘要<br><a id="more"></a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　这家伙很懒竟然没写摘要&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Spring常用配置(二);</title>
+    <link href="http://yoursite.com/2018/09/06/Spring%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/"/>
+    <id>http://yoursite.com/2018/09/06/Spring常用配置/</id>
+    <published>2018-09-06T08:49:12.000Z</published>
+    <updated>2018-09-06T08:49:12.805Z</updated>
+    
+    <content type="html"><![CDATA[<p>　　这家伙很懒竟然没写摘要<br><a id="more"></a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　这家伙很懒竟然没写摘要&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Spring基础</title>
     <link href="http://yoursite.com/2018/09/06/Spring%E5%9F%BA%E7%A1%80/"/>
     <id>http://yoursite.com/2018/09/06/Spring基础/</id>
@@ -269,6 +343,24 @@
   </entry>
   
   <entry>
+    <title>JavaScrpt解析</title>
+    <link href="http://yoursite.com/2018/08/28/JavaScrpt%E8%A7%A3%E6%9E%90ast/"/>
+    <id>http://yoursite.com/2018/08/28/JavaScrpt解析ast/</id>
+    <published>2018-08-28T08:09:46.000Z</published>
+    <updated>2018-08-28T09:01:51.848Z</updated>
+    
+    <content type="html"><![CDATA[<p>　　这家伙很懒竟然没写摘要<br><a id="more"></a></p><p>#使用Java解析javascript(jdk1.9+)<br>链接一:java10解析Javascript相关官方api<br><code>https://docs.oracle.com/javase/10/docs/api/index.html?overview-summary.html</code></p><p>#使用 Acorn 来解析 JavaScript<br>链接一：Acorn github仓库<br><code>https://github.com/acornjs/acorn</code><br>链接二：掘金上前辈使用感悟<br><code>https://juejin.im/post/582425402e958a129926fcb4</code></p><p>#使用babel解析JavaScript<br>链接一：Babel Handbook<br><code>https://github.com/jamiebuilds/Babel Handbookbabel-handbook</code><br>链接二：Babel github仓库<br><code>https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/plugin-handbook.md</code></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　这家伙很懒竟然没写摘要&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>坤哥：相识度匹配</title>
     <link href="http://yoursite.com/2018/08/25/%E5%9D%A4%E5%93%A5%EF%BC%9A%E7%9B%B8%E8%AF%86%E5%BA%A6%E5%8C%B9%E9%85%8D/"/>
     <id>http://yoursite.com/2018/08/25/坤哥：相识度匹配/</id>
@@ -303,44 +395,6 @@
     
     
       <category term="Java基础" scheme="http://yoursite.com/tags/Java%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自定义注解@mytest</title>
-    <link href="http://yoursite.com/2018/08/20/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/"/>
-    <id>http://yoursite.com/2018/08/20/自定义注解/</id>
-    <published>2018-08-20T09:18:57.000Z</published>
-    <updated>2018-09-13T01:26:01.358Z</updated>
-    
-    <content type="html"><![CDATA[<p>　　这家伙很懒竟然没写摘要<br><a id="more"></a></p><h2 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h2><h4 id="步骤分析"><a href="#步骤分析" class="headerlink" title="步骤分析"></a>步骤分析</h4><p>　　<code>a) 创建自定义注解:MyTest.</code><br>　　<code>b) 定义核心运行类.CoreRunner.</code><br>　　<code>c) 在核心运行类中.获得测试类的Class.</code><br>　　<code>d) 获得Class中的所有方法.遍历得到每个方法.</code><br>　　<code>e) 判断方法上有MyTest注解,就执行该方法.</code></p><h4 id="1-编写自定义注解类"><a href="#1-编写自定义注解类" class="headerlink" title="1. 编写自定义注解类"></a>1. 编写自定义注解类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@Retention(value=RetentionPolicy.RUNTIME)//元注解①</span><br><span class="line">public @interface MyTest &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h6 id="元注解-Java中用来修饰其他注释的注释"><a href="#元注解-Java中用来修饰其他注释的注释" class="headerlink" title="元注解:Java中用来修饰其他注释的注释"></a>元注解:Java中用来修饰其他注释的注释</h6><p>　　<code>@Retention(value=RetentionPolicy.RUNTIME)</code><br>　　方法内传入一个枚举分别有三个值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RetentionPolicy.SOURCE:源文件阶段</span><br><span class="line">value=RetentionPolicy.CLASS:字节码阶段</span><br><span class="line">RetentionPolicy.RUNTIME:运行阶段(创建对象阶段)</span><br></pre></td></tr></table></figure></p><p>　　用与设置注解的存在阶段,默认的自定义注解存在与源码阶段 在生成class文件后以及创建对象阶段就不存在了,所以需要将注解存在阶段延长</p><h6 id="补充-类的存在有三种阶段对应的也有三种获取的方式"><a href="#补充-类的存在有三种阶段对应的也有三种获取的方式" class="headerlink" title="补充:类的存在有三种阶段对应的也有三种获取的方式"></a>补充:类的存在有三种阶段对应的也有三种获取的方式</h6><p>　　a) 源代码阶段:以.java结尾的文件的形式存在，通过Class.forName(“类名”)方法获得。<br>　　b) 字节码阶段:将字节码文件编译后以.class结尾的文件存在，通过类名.class方式获取。<br>　　c) 创建对象阶段:JVM将字节码文件加载进内存的方法区内，通过对象.getClass方法获得。</p><h4 id="2-编写自定义注解核心运行类"><a href="#2-编写自定义注解核心运行类" class="headerlink" title="2. 编写自定义注解核心运行类"></a>2. 编写自定义注解核心运行类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">    /**</span><br><span class="line">     * 获得测试类的Class.</span><br><span class="line">     * 获得Class中的所有的方法.</span><br><span class="line">     * 遍历每个方法,查看每个方法上是否有MyTest注解.</span><br><span class="line">     * 有MyTest注解,这个方法就执行</span><br><span class="line">     * boolean  isAnnotationPresent(Class&lt;? extends Annotation&gt; annotationClass)</span><br><span class="line">     * 判断指定类型的注释是否存在于此元素上 是则返回 true，否则返回 false。</span><br><span class="line">     */</span><br><span class="line">public class CoreRunner &#123;</span><br><span class="line">    public static void main(String[] args) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException &#123;</span><br><span class="line">        // 1.获得测试类的Class:</span><br><span class="line">        Class clazz = AnnotationDemo1.class;</span><br><span class="line">        // 2.获得Class中的所有的方法: 规定了测试的方法必须是public.</span><br><span class="line">        Method[] methods = clazz.getMethods();</span><br><span class="line">        // 3.遍历每个方法:</span><br><span class="line">        for(Method method:methods)&#123;</span><br><span class="line">            boolean flag = method.isAnnotationPresent(MyTest.class);</span><br><span class="line">            if(flag)&#123;</span><br><span class="line">                // 说明方法上有MyTest注解:</span><br><span class="line">                method.invoke(clazz.newInstance(), null);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="3-编写测试类"><a href="#3-编写测试类" class="headerlink" title="3. 编写测试类"></a>3. 编写测试类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class AnnotationDemo1 &#123;</span><br><span class="line">@MyTest</span><br><span class="line">public void demo1()&#123;</span><br><span class="line">System.out.println(&quot;demo1执行了...&quot;);</span><br><span class="line">&#125;</span><br><span class="line">@MyTest</span><br><span class="line">public void demo2()&#123;</span><br><span class="line">System.out.println(&quot;demo2执行了...&quot;);</span><br><span class="line">&#125;</span><br><span class="line">public void demo3()&#123;</span><br><span class="line">System.out.println(&quot;demo3执行了...&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;　　这家伙很懒竟然没写摘要&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Java基础" scheme="http://yoursite.com/tags/Java%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2018/04/21/hello-world/"/>
-    <id>http://yoursite.com/2018/04/21/hello-world/</id>
-    <published>2018-04-21T05:54:00.000Z</published>
-    <updated>2018-08-21T05:33:07.834Z</updated>
-    
-    <content type="html"><![CDATA[<p>　　Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><a id="more"></a><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server -p 4000</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;　　Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-    
-    </summary>
-    
     
   </entry>
   
