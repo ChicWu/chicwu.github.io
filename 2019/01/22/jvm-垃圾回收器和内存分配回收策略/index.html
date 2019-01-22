@@ -123,7 +123,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JVM," />
 
 
 
@@ -134,16 +134,18 @@
 
 
 
-<meta name="description" content="黑龙江科技大学">
-<meta property="og:type" content="website">
-<meta property="og:title" content="117blog">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+<meta name="description" content="这家伙很懒竟然没写摘要">
+<meta name="keywords" content="JVM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jvm:垃圾回收器和内存分配回收策略">
+<meta property="og:url" content="http://yoursite.com/2019/01/22/jvm-垃圾回收器和内存分配回收策略/index.html">
 <meta property="og:site_name" content="117blog">
-<meta property="og:description" content="黑龙江科技大学">
+<meta property="og:description" content="这家伙很懒竟然没写摘要">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-22T11:09:52.562Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="117blog">
-<meta name="twitter:description" content="黑龙江科技大学">
+<meta name="twitter:title" content="Jvm:垃圾回收器和内存分配回收策略">
+<meta name="twitter:description" content="这家伙很懒竟然没写摘要">
 
 
 
@@ -173,13 +175,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2019/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/01/22/jvm-垃圾回收器和内存分配回收策略/"/>
 
 
 
 
 
-  <title>Archive | 117blog</title>
+  <title>Jvm:垃圾回收器和内存分配回收策略 | 117blog</title>
   
 
 
@@ -207,7 +209,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -311,259 +313,253 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/22/jvm-垃圾回收器和内存分配回收策略/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChicWu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://img-blog.csdn.net/20180401145847511">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="117blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h2 class="post-title" itemprop="name headline">Jvm:垃圾回收器和内存分配回收策略</h2>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-22T14:15:47+08:00">
+                2019-01-22
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-01-22T19:09:52+08:00">
+                2019-01-22
+              </time>
+            
+          </span>
+
           
-        
-        Um..! 23 posts in total. Keep on posting.
-      </span>
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/01/22/jvm-垃圾回收器和内存分配回收策略/" class="leancloud_visitors" data-flag-title="Jvm:垃圾回收器和内存分配回收策略">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <p>　　这家伙很懒竟然没写摘要<br><a id="more"></a></p>
+<h1 id="GC的分析"><a href="#GC的分析" class="headerlink" title="GC的分析"></a>GC的分析</h1><ul>
+<li>GC进行的地点</li>
+<li>GC进行的时间</li>
+<li>如何进行GC</li>
+<li>了解GC和内存分配的意义</li>
+</ul>
+<h1 id="判断对象的存活"><a href="#判断对象的存活" class="headerlink" title="判断对象的存活"></a>判断对象的存活</h1><ul>
+<li>引用计数法</li>
+</ul>
+<p>　　快，方便，实现简单；<br>　　缺点：对象相互引用时，很难判断对象是否改回收。</p>
+<ul>
+<li>可达性分析 </li>
+</ul>
+<p>　　来判定对象是否存活的。这个算法的基本思路就是通过一系列的称为“GC Roots”的对象作为起始点，从这些节点开始向下搜索，搜索所走过的路径称为引用链（Reference Chain），当一个对象到GC Roots没有任何引用链相连时，则证明此对象是不可用的。</p>
+<ul>
+<li>四种引用</li>
+</ul>
+<p>　　在GC中一共包括四种引用：强引用，软引用，弱引用，虚引用。其引用强弱 强引用&gt;软引用&gt;弱引用&gt;虚引用</p>
+<p>　　* 强引用：垃圾收集器永远不会回收被强引用用的对象。</p>
+<p>　　* 软引用：在系统将要发生内存溢出异常之前，将会把这些顶下列进回收范围之中进行第二次回收。</p>
+<p>　　* 弱引用：被弱引用关联的对象只能生存到下一次垃圾收集发生之前</p>
+<p>　　*　虚引用：一个对象是否有虚引用的存在，完全不会对其生产时间构造影响，将一个对象设置未虚引用关联的唯一目的就是能在对这个对象被收集器回收时收到一个系统通知。</p>
+<h1 id="垃圾收集算法"><a href="#垃圾收集算法" class="headerlink" title="垃圾收集算法"></a>垃圾收集算法</h1><ul>
+<li>标记—清除算法</li>
+<li>复制算法</li>
+<li>标记整理算法</li>
+</ul>
+<h1 id="具体垃圾收集器"><a href="#具体垃圾收集器" class="headerlink" title="具体垃圾收集器"></a>具体垃圾收集器</h1><ul>
+<li><p>java垃圾回收分代回收<br>　　分代回收在现代垃圾回收器的标配，现在的垃圾回收都是基于垃圾回收的基础上的，<br>　　在分代回收当中将整个回收的区域分为三个小的区域。新生代。旧生代，和永久代。新生代中有分为三个区域<br>　　链接：<br>垃圾</p>
+</li>
+<li><p>Serial/Serial Old</p>
+</li>
+<li>Parallel Scavenge（ParallerGC）/Parallel Old</li>
+<li>ParNew</li>
+<li>Concurrent Mark Sweep （CMS）</li>
+<li>G1</li>
+</ul>
+<h1 id="内存分配与回收策略"><a href="#内存分配与回收策略" class="headerlink" title="内存分配与回收策略"></a>内存分配与回收策略</h1><h1 id="实战调参"><a href="#实战调参" class="headerlink" title="实战调参"></a>实战调参</h1>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JVM/" rel="tag"># JVM</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
         
-        
+
         
 
         
           
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2019">2019</h2>
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
           </div>
         
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/22/jvm-垃圾回收器和内存分配回收策略/" itemprop="url">
-              
-                <span itemprop="name">Jvm:垃圾回收器和内存分配回收策略</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-22T14:15:47+08:00"
-              content="2019-01-22" >
-          01-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        </div>
+      
       
 
-        
-        
-        
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/11/设计模式二，工厂设计模式/" rel="next" title="设计模式（二）工厂设计模式">
+                <i class="fa fa-chevron-left"></i> 设计模式（二）工厂设计模式
+              </a>
+            
+          </div>
 
-        
-        
+          <span class="post-nav-divider"></span>
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/11/设计模式二，工厂设计模式/" itemprop="url">
-              
-                <span itemprop="name">设计模式（二）工厂设计模式</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-11T15:40:17+08:00"
-              content="2019-01-11" >
-          01-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/11/设计模式一，设计原则/" itemprop="url">
-              
-                <span itemprop="name">设计模式（一）设计原则</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-11T10:03:46+08:00"
-              content="2019-01-11" >
-          01-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/08/Centos7常用配置/" itemprop="url">
-              
-                <span itemprop="name">Centos7常用配置</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-08T14:41:07+08:00"
-              content="2019-01-08" >
-          01-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/08/Centos常用服务安装/" itemprop="url">
-              
-                <span itemprop="name">Centos常用服务安装</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-08T14:40:46+08:00"
-              content="2019-01-08" >
-          01-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/03/jsoup/" itemprop="url">
-              
-                <span itemprop="name">Jsoup</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-03T13:49:03+08:00"
-              content="2019-01-03" >
-          01-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-    </div>
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -571,6 +567,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -593,8 +593,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -704,6 +713,22 @@
 		<!--my custom code end-->
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GC的分析"><span class="nav-number">1.</span> <span class="nav-text">GC的分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判断对象的存活"><span class="nav-number">2.</span> <span class="nav-text">判断对象的存活</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#垃圾收集算法"><span class="nav-number">3.</span> <span class="nav-text">垃圾收集算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#具体垃圾收集器"><span class="nav-number">4.</span> <span class="nav-text">具体垃圾收集器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存分配与回收策略"><span class="nav-number">5.</span> <span class="nav-text">内存分配与回收策略</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实战调参"><span class="nav-number">6.</span> <span class="nav-text">实战调参</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -857,6 +882,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
@@ -1047,26 +1076,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
   
 
 
