@@ -137,14 +137,14 @@
 <meta name="description" content="最近在项目的压测过程中遇到一些性能上的问题，在对内存资源的监控中发现了第一个问题在项目中存在一个内存泄漏每次GC后总会留有一些内存无法回收,然后老大就开始安排我们兵分两路，一路去排查内存泄漏的原因所在，另外一路去通过对JVM参数的调节，将内存泄漏带来的影响调到最小，顺便提升一下项目的性能，我先是被安排到了第一路，然后在机缘巧合下和老大转战到了第二路进行JVM调优（主要是老大在调参，我是和主要是">
 <meta name="keywords" content="JVM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Jvm:垃圾回收器和内存分配回收策略">
+<meta property="og:title" content="Jvm垃圾回收器和内存分配回收策略">
 <meta property="og:url" content="http://yoursite.com/2019/01/22/jvm-垃圾回收器和内存分配回收策略/index.html">
 <meta property="og:site_name" content="117blog">
 <meta property="og:description" content="最近在项目的压测过程中遇到一些性能上的问题，在对内存资源的监控中发现了第一个问题在项目中存在一个内存泄漏每次GC后总会留有一些内存无法回收,然后老大就开始安排我们兵分两路，一路去排查内存泄漏的原因所在，另外一路去通过对JVM参数的调节，将内存泄漏带来的影响调到最小，顺便提升一下项目的性能，我先是被安排到了第一路，然后在机缘巧合下和老大转战到了第二路进行JVM调优（主要是老大在调参，我是和主要是">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-24T11:42:28.162Z">
+<meta property="og:updated_time" content="2019-01-24T12:38:21.946Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jvm:垃圾回收器和内存分配回收策略">
+<meta name="twitter:title" content="Jvm垃圾回收器和内存分配回收策略">
 <meta name="twitter:description" content="最近在项目的压测过程中遇到一些性能上的问题，在对内存资源的监控中发现了第一个问题在项目中存在一个内存泄漏每次GC后总会留有一些内存无法回收,然后老大就开始安排我们兵分两路，一路去排查内存泄漏的原因所在，另外一路去通过对JVM参数的调节，将内存泄漏带来的影响调到最小，顺便提升一下项目的性能，我先是被安排到了第一路，然后在机缘巧合下和老大转战到了第二路进行JVM调优（主要是老大在调参，我是和主要是">
 
 
@@ -181,7 +181,7 @@
 
 
 
-  <title>Jvm:垃圾回收器和内存分配回收策略 | 117blog</title>
+  <title>Jvm垃圾回收器和内存分配回收策略 | 117blog</title>
   
 
 
@@ -344,7 +344,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Jvm:垃圾回收器和内存分配回收策略</h2>
+          <h2 class="post-title" itemprop="name headline">Jvm垃圾回收器和内存分配回收策略</h2>
         
 
         <div class="post-meta">
@@ -372,7 +372,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-01-24T19:42:28+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-01-24T20:38:21+08:00">
                 2019-01-24
               </time>
             
@@ -386,7 +386,7 @@
 
           
           
-             <span id="/2019/01/22/jvm-垃圾回收器和内存分配回收策略/" class="leancloud_visitors" data-flag-title="Jvm:垃圾回收器和内存分配回收策略">
+             <span id="/2019/01/22/jvm-垃圾回收器和内存分配回收策略/" class="leancloud_visitors" data-flag-title="Jvm垃圾回收器和内存分配回收策略">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -456,7 +456,7 @@
 <ul>
 <li>什么时候进行GC</li>
 </ul>
-<p>　　详见下文，垃圾判断对象的存活。</p>
+<p>　　详见下文。</p>
 <ul>
 <li>如何进行GC</li>
 </ul>
@@ -469,7 +469,8 @@
 <h1 id="判断对象的存活"><a href="#判断对象的存活" class="headerlink" title="判断对象的存活"></a>判断对象的存活</h1><h2 id="对象存活的判断策略"><a href="#对象存活的判断策略" class="headerlink" title="对象存活的判断策略"></a>对象存活的判断策略</h2><ul>
 <li>引用计数法</li>
 </ul>
-<p>　　快，方便，实现简单；<br>　　缺点：对象相互引用时，很难判断对象是否改回收。</p>
+<p>　　给对象中添加一个引用计数器，每当有一个地方引用它，计数器就加1；当引用失效，计数器就减1；任何时候计数器为0的对象就是不可能再被使用的。</p>
+<p>　　这个方法实现简单，效率高，但是目前主流的虚拟机中并没有选择这个算法来管理内存，其最主要的原因是它很难解决对象之间相互循环引用的问题。 所谓对象之间的相互引用问题，如下面代码所示：除了对象objA 和 objB 相互引用着对方之外，这两个对象之间再无任何引用。但是他们因为互相引用对方，导致它们的引用计数器都不为0，于是引用计数算法无法通知 GC 回收器回收他们。</p>
 <ul>
 <li>可达性分析 </li>
 </ul>
@@ -483,19 +484,15 @@
 <li>虚引用：一个对象是否有虚引用的存在，完全不会对其生产时间构造影响，将一个对象设置未虚引用关联的唯一目的就是能在对这个对象被收集器回收时收到一个系统通知。　　</li>
 </ul>
 <h1 id="垃圾收集算法"><a href="#垃圾收集算法" class="headerlink" title="垃圾收集算法"></a>垃圾收集算法</h1><ul>
-<li>标记—清除算法</li>
+<li><p>标记—清除算法<br>   　　如它的名字一样，算法分为“标记”和“清除”两个阶段：首先标记出所有需要回收的对象，在标记完成后统一回收掉所有被标记的对象。之所以说它是最基础的收集算法，是因为<code>后续的收集算法都是基于这种思路并对其缺点进行改进</code>而得到的。<br>   　　它的主要缺点有两个：<br>   　　（1）效率问题：标记和清除过程的效率都不高；<br>   　　（2）空间问题：标记清除之后会产生大量不连续的内存碎片，空间碎片太多可能会导致，碎片过多会导致大对象无法分配到足够的连续内存，从而不得不提前触发GC，甚至Stop The World</p>
+</li>
+<li><p>复制算法<br>   　　为解决效率问题，“复制”收集算法出现了。它将可用内存按容量划分为大小相等的两块，每次只使用其中的一块。当这一块的内存用完了，就将还存活着的对象复制到另外一块上面，然后再把已使用过的内存空间一次清理掉。<br>   　　 这样使得每次都是对其中的一块进行内存回收，内存分配时也就不用考虑内存碎片等复杂情况，只要移动堆顶指针，按顺序分配内存即可，<code>实现简单，运行高效</code>。From Survivor, To Survivor使用的就是复制算法。老年代不使用这种算法。<br>   　　 它的主要缺点有两个：<br>   　　（1）效率问题：在对象存活率较高时，复制操作次数多，效率降低；<br>   　　（2）空间问题：內存缩小了一半；需要额外空间做分配担保(老年代)</p>
+</li>
+<li><p>标记—整理算法<br>   　　根据老年代对象存活率高的特点，有人提出了另外一种“标记-整理”（Mark-Compact）算法。该算法在复制算法在对象存活率较高时持续复制导致效率较低的缺点进行改进，在标记-清除算法基础上，不直接清理，而是让所有存活的对象都向一端移动，然后直接清理掉端边界以外的内存。这样既可以避免不连续空间出现，还可以避免对象存活率较高时的持续复制。</p>
+</li>
 </ul>
-<p>　　如它的名字一样，算法分为“标记”和“清除”两个阶段：首先标记出所有需要回收的对象，在标记完成后统一回收掉所有被标记的对象。之所以说它是最基础的收集算法，是因为<code>后续的收集算法都是基于这种思路并对其缺点进行改进</code>而得到的。<br>它的主要缺点有两个：<br>　　（1）效率问题：标记和清除过程的效率都不高；<br>　　（2）空间问题：标记清除之后会产生大量不连续的内存碎片，空间碎片太多可能会导致，碎片过多会导致大对象无法分配到足够的连续内存，从而不得不提前触发GC，甚至Stop The World</p>
-<ul>
-<li>复制算法<br>　　为解决效率问题，“复制”收集算法出现了。它将可用内存按容量划分为大小相等的两块，每次只使用其中的一块。当这一块的内存用完了，就将还存活着的对象复制到另外一块上面，然后再把已使用过的内存空间一次清理掉。<br>　　 这样使得每次都是对其中的一块进行内存回收，内存分配时也就不用考虑内存碎片等复杂情况，只要移动堆顶指针，按顺序分配内存即可，<code>实现简单，运行高效</code>。From Survivor, To Survivor使用的就是复制算法。老年代不使用这种算法。<br>　　 它的主要缺点有两个：<br>　　（1）效率问题：在对象存活率较高时，复制操作次数多，效率降低；<br>　　（2）空间问题：內存缩小了一半；需要額外空间做分配担保(老年代)</li>
-<li>标记—整理算法</li>
-</ul>
-<p>　　根据老年代对象存活率高的特点，有人提出了另外一种“标记-整理”（Mark-Compact）算法。该算法在复制算法在对象存活率较高时持续复制导致效率较低的缺点进行改进，在标记-清除算法基础上，不直接清理，而是让所有存活的对象都向一端移动，然后直接清理掉端边界以外的内存。这样既可以避免不连续空间出现，还可以避免对象存活率较高时的持续复制。</p>
-<h1 id="具体垃圾收集器"><a href="#具体垃圾收集器" class="headerlink" title="具体垃圾收集器"></a>具体垃圾收集器</h1><h2 id="分代回收机制"><a href="#分代回收机制" class="headerlink" title="分代回收机制"></a>分代回收机制</h2><ul>
-<li>java垃圾回收分代回收<br>　　　　分代回收是现代垃圾回收器的标配，现在的垃圾回收都是基于分代垃圾回收的基础上的。GC分代的基本假设：绝大部分对象的生命周期都非常短暂，存活时间短。<br>　　“分代收集”算法，把Java堆分为新生代和老年代，这样就可以根据各个年代的特点采用最适当的收集算法。在新生代中，每次垃圾收集时都发现有大批对象死去，只有少量存活，那就选用复制算法，只需要付出少量存活对象的复制成本就可以完成收集。而老年代中因为对象存活率高、没有额外空间对它进行分配担保，就必须使用“标记-清理”或“标记-整理”算法来进行回收。<h2 id="各类收集器比较"><a href="#各类收集器比较" class="headerlink" title="各类收集器比较"></a>各类收集器比较</h2></li>
-</ul>
-<p><img src="" alt=""></p>
-<ul>
+<h1 id="具体垃圾收集器"><a href="#具体垃圾收集器" class="headerlink" title="具体垃圾收集器"></a>具体垃圾收集器</h1><h2 id="分代回收机制"><a href="#分代回收机制" class="headerlink" title="分代回收机制"></a>分代回收机制</h2><p>　　分代回收是现代垃圾回收器的标配，现在的垃圾回收都是基于分代垃圾回收的基础上的。GC分代的基本假设：绝大部分对象的生命周期都非常短暂，存活时间短。<br>　　“分代收集”算法，把Java堆分为新生代和老年代，这样就可以根据各个年代的特点采用最适当的收集算法。在新生代中，每次垃圾收集时都发现有大批对象死去，只有少量存活，那就选用复制算法，只需要付出少量存活对象的复制成本就可以完成收集。而老年代中因为对象存活率高、没有额外空间对它进行分配担保，就必须使用“标记-清理”或“标记-整理”算法来进行回收。</p>
+<h2 id="各类收集器比较"><a href="#各类收集器比较" class="headerlink" title="各类收集器比较"></a>各类收集器比较</h2><ul>
 <li><p>Serial/Serial Old 串行</p>
 </li>
 <li><p>Parallel Scavenge（Paraller GC）/Parallel Old 并行清除</p>
@@ -507,12 +504,53 @@
 <li><p>G1 并发与并行</p>
 </li>
 <li><p>通过配置选择具体的回收器</p>
+<h1 id="什么情况下触发垃圾回收"><a href="#什么情况下触发垃圾回收" class="headerlink" title="什么情况下触发垃圾回收"></a>什么情况下触发垃圾回收</h1></li>
+<li><p>Minor GC</p>
+<p>从年轻代空间（包括 Eden 和 Survivor 区域）回收内存被称为 Minor GC。当发生Minor GC事件的时候，有一些有趣的地方需要注意到：</p>
+<ol>
+<li>当 JVM 无法为一个新的对象分配空间时会触发 Minor GC，比如当 Eden 区满了。所以分配率越高，越频繁执行 Minor GC。</li>
+<li>内存池被填满的时候，其中的内容全部会被复制，指针会从0开始跟踪空闲内存。Eden 和 Survivor 区进行了标记和复制操作，取代了经典的标记、扫描、压缩、清理操作。所以 Eden 和 Survivor 区不存在内存碎片。写指针总是停留在所使用内存池的顶部。</li>
+<li>执行 Minor GC 操作时，不会影响到永久代。从永久代到年轻代的引用被当成 GC roots，从年轻代到永久代的引用在标记阶段被直接忽略掉。</li>
+<li>质疑常规的认知，所有的 Minor GC 都会触发“全世界的暂停（stop-the-world）”，停止应用程序的线程。对于大部分应用程序，停顿导致的延迟都是可以忽略不计的。其中的真相就 是，大部分 Eden 区中的对象都能被认为是垃圾，永远也不会被复制到 Survivor 区或者老年代空间。如果正好相反，Eden 区大部分新生对象不符合 GC 条件，Minor GC 执行时暂停的时间将会长很多。</li>
+</ol>
+</li>
+<li><p>Major GC</p>
+<p>Major GC 是清理OldGen。</p>
+</li>
+<li><p>Full GC</p>
+<p>Full GC 是清理整个堆空间—包括年轻代和永久代。FullGC触发场景：</p>
+<p>1、System.gc</p>
+<p>2.promotion failed (年代晋升失败,比如eden区的存活对象晋升到S区放不下，又尝试直接晋升到Old区又放不下，那么Promotion Failed,会触发FullGC)</p>
+<p>3.新生代晋升的平均大小 大于 老年代的剩余空间 （为了避免新生代晋升到老年代失败</p>
 </li>
 </ul>
-<h1 id="内存分配与回收策略"><a href="#内存分配与回收策略" class="headerlink" title="内存分配与回收策略"></a>内存分配与回收策略</h1><h1 id="实战调参"><a href="#实战调参" class="headerlink" title="实战调参"></a>实战调参</h1><ul>
+<h1 id="内存分配与回收策略"><a href="#内存分配与回收策略" class="headerlink" title="内存分配与回收策略"></a>内存分配与回收策略</h1><ul>
+<li>对象优先分配在线程的本地分配缓冲区</li>
+</ul>
+<p>　　每个线程可以在堆中预先分配得到一片区域，作为本地线程分配缓冲区（TLAB）。当该线程执行时，有对象创建的话，就在该线程的TLAB中分配内存。当该线程的TLAB用完了才申请堆中的空闲内存。</p>
+<ul>
+<li>堆中优先分配Eden</li>
+</ul>
+<p>　　 大多数情况下，对象都在新生代的Eden区中分配内存。而因为大部分的对象都是“朝生夕死”的，所以新生代又会频繁进行垃圾回收。</p>
+<ul>
+<li>大对象直接进入老年代</li>
+</ul>
+<p>　　需要大量连续空间的对象，如：长字符串、数组等，会直接在老年代分配内存。这是因为，这样可以避免在新生代区频繁的GC时发生大量的内存赋值（新生代的GC是采用复制算法的）。</p>
+<ul>
+<li>长期存活的对象“晋入”老年代</li>
+</ul>
+<p>　　新生代中经历了多次GC仍然存活的对象，当年龄达到一定程度（默认15）时就会晋升到老年代。</p>
+<p>　　为了更好地适应内存情况，虚拟机不是要求对象必须到达阀值才可晋升老年代的，而是采用动态年龄判定的方法：如果Servivor空间中相同年龄的对象大小大于Servivor空间的一般时，由于下一次的MinorGC时，这些对象如果仍然存活的话，复制到ToServivor空间时就放不下了。所以，在本次GC时就可以把这些对象以及年龄大于等于这些对象的直接进入老年代。</p>
+<p>　　在MinorGC时，如果Eden和FromServivor中存活的对象在复制到ToServivor时放不下了，也会直接分配到老年代。</p>
+<ul>
+<li>空间分配担保</li>
+</ul>
+<p>　　 在MinorGC之前，会先检查老年代最大可用空间是否可以容纳新生代所有对象（防止新生代全部晋升时放不下），如果可以容纳，则MinorGC可以安全执行。否则，检查是否允许担保失败，是则检查老年代最大可用空间是否大于历次晋升到老年代的对象的平均大小，是则尝试进行MinorGC；小于或者MinorGC失败，则会发起一次FullGC清理老年代</p>
+<h1 id="实战调参"><a href="#实战调参" class="headerlink" title="实战调参"></a>实战调参</h1><ul>
 <li>查看GC当中各区域的内存使用情况</li>
 <li>调节使用不同的回收器组合</li>
 <li>调整不同区域的内存大小</li>
+<li>调整对象晋升老年代的年龄阈值</li>
 </ul>
 
       
@@ -751,7 +789,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GC的分析"><span class="nav-number">1.</span> <span class="nav-text">GC的分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判断对象的存活"><span class="nav-number">2.</span> <span class="nav-text">判断对象的存活</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对象存活的判断策略"><span class="nav-number">2.1.</span> <span class="nav-text">对象存活的判断策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四种引用"><span class="nav-number">2.2.</span> <span class="nav-text">四种引用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#垃圾收集算法"><span class="nav-number">3.</span> <span class="nav-text">垃圾收集算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#具体垃圾收集器"><span class="nav-number">4.</span> <span class="nav-text">具体垃圾收集器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分代回收机制"><span class="nav-number">4.1.</span> <span class="nav-text">分代回收机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#各类收集器比较"><span class="nav-number">4.2.</span> <span class="nav-text">各类收集器比较</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存分配与回收策略"><span class="nav-number">5.</span> <span class="nav-text">内存分配与回收策略</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实战调参"><span class="nav-number">6.</span> <span class="nav-text">实战调参</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GC的分析"><span class="nav-number">1.</span> <span class="nav-text">GC的分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判断对象的存活"><span class="nav-number">2.</span> <span class="nav-text">判断对象的存活</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对象存活的判断策略"><span class="nav-number">2.1.</span> <span class="nav-text">对象存活的判断策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四种引用"><span class="nav-number">2.2.</span> <span class="nav-text">四种引用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#垃圾收集算法"><span class="nav-number">3.</span> <span class="nav-text">垃圾收集算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#具体垃圾收集器"><span class="nav-number">4.</span> <span class="nav-text">具体垃圾收集器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分代回收机制"><span class="nav-number">4.1.</span> <span class="nav-text">分代回收机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#各类收集器比较"><span class="nav-number">4.2.</span> <span class="nav-text">各类收集器比较</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么情况下触发垃圾回收"><span class="nav-number">5.</span> <span class="nav-text">什么情况下触发垃圾回收</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存分配与回收策略"><span class="nav-number">6.</span> <span class="nav-text">内存分配与回收策略</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实战调参"><span class="nav-number">7.</span> <span class="nav-text">实战调参</span></a></li></ol></div>
             
 
           </div>
